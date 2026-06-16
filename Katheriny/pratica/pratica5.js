@@ -12,8 +12,9 @@ for (let i = 1; i <= 10; i++) {
 // Instrução: Use while para somar números de 1 até 100. Exiba o resultado final (que deve ser 5050).
 // Dica: Acumule os valores em uma variável soma.
 
-let contador = 0
-while (contador < 100) {
-    console.log(contador)
-    contador ++
+let soma = 0
+let i = 1
+while (i <= 100) {
+    soma += i, i++;
 }
+console.log(soma);
