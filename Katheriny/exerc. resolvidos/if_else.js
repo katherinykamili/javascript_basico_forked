@@ -66,15 +66,17 @@ if (letra === "A" || letra === "E" || letra === "I" || letra === "O" || letra ==
 // - **Aprovado com Distinção**, se a média for igual a 10;
 // - **Reprovado**, se a média for menor que 7.
 
-/*let nota1 = 9.5;
-let nota2 = 5.7;
-let media = (nota1 + nota2) / 2;
+
+/*let nota1 = 9.5
+let nota2 = 5.7
+let media = (nota1 + nota2) / 2
+
 if (media >= 7) {
-    console.log("Aprovado");
+    alert("Aprovado")
 } else if (media === 10) {
-    console.log("Aprovado com Distinção");
+    alert("Aprovado com Distinção")
 } else {
-    console.log("Reprovado");
+    alert("Reprovado")
 }*/
 
 //  6. Maior de três números
@@ -95,7 +97,7 @@ console.log("O maior número é: ", maior);*/
 //  7. Maior e menor de três números
 // Faça um programa que leia três números e mostre o maior e o menor deles.
 
-/*const a = 30
+/*const a = 30 
 const b = 20
 const c = 10
 let maiorNum = a;
@@ -112,8 +114,8 @@ if (b < menorNum) {
 if (c < menorNum) {
     menorNum = c;
 }
-console.log("O maior número é: ", maiorNum);
-console.log("O menor número é: ", menorNum);*/
+alert('O maior número é: ", maiorNum')
+alert('O menor número é: ", menorNum')*/
 
 //  8. Produto mais barato
 // Faça um programa que pergunte o preço de três produtos e informe qual produto deve ser comprado, sabendo que a decisão é sempre pelo mais barato.
@@ -209,20 +211,20 @@ if (turno == "m") {
 let percentual, valorAumento, novoSalario;
 
 if (salario <= 280) {
-    percentual = 20;
+    percentual = 20
 } else if (salario <= 700) {
-    percentual = 15;
+    percentual = 15
 } else if (salario <= 1500) {
-    percentual = 10;
+    percentual = 10
 } else {
-    percentual = 5;
+    percentual = 5
 }
-valorAumento = salario * (percentual / 100);
-novoSalario = salario + valorAumento;
-console.log("Salário antes do reajuste: R$ ", salario.toFixed(2));
-console.log("Percentual aplicado: ", percentual, "%");
-console.log("Valor do aumento: R$ ", valorAumento.toFixed(2));
-console.log("Novo salário: R$ ", novoSalario.toFixed(2));*/
+valorAumento = salario * (percentual / 100)
+novoSalario = salario + valorAumento
+alert("Salário antes do reajuste: R$ ", salario.toFixed(2))
+alert("Percentual aplicado: ", percentual, "%")
+alert("Valor do aumento: R$ ", valorAumento.toFixed(2))
+alert("Novo salário: R$ ", novoSalario.toFixed(2))*/
 
 // 12. Folha de pagamento
 // Faça um programa para cálculo de folha de pagamento.
@@ -284,7 +286,7 @@ alert(
 FGTS (11%): R$ ${fgts.toFixed(2)}
 Total de descontos: R$ ${totalDescontos.toFixed(2)}
 Salário Líquido: R$ ${salarioLiquido.toFixed(2)}`
-);*/
+)*/
 
 // 13. Dia da semana
 // Leia um número (1 a 7) e exiba o dia da semana correspondente ou "Valor inválido".
@@ -440,7 +442,7 @@ if (Number.isInteger(numero18)) {
 // - Par ou ímpar;
 // - Positivo ou negativo.
 
-/*const num19 = Number(prompt("Digite um número: "))
+/*const num19 = Number(prompt("Digite um número: "));
 
 let paridade, sinal
 
