@@ -32,7 +32,7 @@
 ### Ementa
 A aula introduz os conceitos fundamentais de armazenamento de dados em JavaScript. O aluno aprende a criar variáveis mutáveis e constantes, entende escopo de bloco e reconhece os tipos primitivos mais comuns. Exercícios práticos envolvem declaração, reatribuição e exibição de valores no console.
 
-**Atividades desenvolvidas para o Projeto @arizeviecelli**
+**Atividades desenvolvidas para o Projeto @karizeviecelli**
 
 ---
 
@@ -55,7 +55,7 @@ A aula introduz os conceitos fundamentais de armazenamento de dados em JavaScrip
 ### Ementa
 Operadores são as ferramentas para manipular dados. A aula aborda desde a aritmética básica até expressões lógicas complexas, passando pela compreensão da precedência. Exemplos práticos incluem cálculo de médias, verificação de paridade e validação de entradas.
 
-**Atividades desenvolvidas para o Projeto @arizeviecelli**
+**Atividades desenvolvidas para o Projeto @karizeviecelli**
 
 ---
 
@@ -78,7 +78,7 @@ Operadores são as ferramentas para manipular dados. A aula aborda desde a aritm
 ### Ementa
 A tomada de decisão é essencial em qualquer programa. A aula ensina as três formas de controle condicional – if/else, switch e ternário – com ênfase na clareza do código. Os alunos resolvem problemas como classificação de notas, dias da semana e validação de senhas.
 
-**Atividades desenvolvidas para o Projeto @arizeviecelli**
+**Atividades desenvolvidas para o Projeto @karizeviecelli**
 
 ---
 
@@ -102,7 +102,7 @@ A tomada de decisão é essencial em qualquer programa. A aula ensina as três f
 ### Ementa
 Repetição é o que automatiza tarefas. A aula explora os três tipos de laços e seus usos típicos. Exercícios vão de contagens simples até a geração de tabuadas e a busca de números primos. O aluno também aprende a evitar loops infinitos.
 
-**Atividades desenvolvidas para o Projeto @arizeviecelli**
+**Atividades desenvolvidas para o Projeto @karizeviecelli**
 
 ---
 
@@ -126,7 +126,7 @@ Repetição é o que automatiza tarefas. A aula explora os três tipos de laços
 ### Ementa
 Arrays são a estrutura de dados mais versátil em JavaScript. A aula cobre desde criação básica até o uso de métodos funcionais. Os alunos praticam ordenação, cópia, remoção e busca, além de trabalharem com matrizes bidimensionais.
 
-**Atividades desenvolvidas para o Projeto @arizeviecelli**
+**Atividades desenvolvidas para o Projeto @karizeviecelli**
 
 ---
 
@@ -150,7 +150,7 @@ Arrays são a estrutura de dados mais versátil em JavaScript. A aula cobre desd
 ### Ementa
 Objetos modelam entidades do mundo real. A aula ensina a criar, modificar e percorrer objetos, além de introduzir o conceito de `this`. Os alunos desenvolvem um cadastro de produtos e um perfil de usuário com endereço.
 
-**Atividades desenvolvidas para o Projeto @arizeviecelli**
+**Atividades desenvolvidas para o Projeto @karizeviecelli**
 
 ---
 
@@ -173,7 +173,7 @@ Objetos modelam entidades do mundo real. A aula ensina a criar, modificar e perc
 ### Ementa
 Funções são o coração da reutilização de código. A aula cobre desde a sintaxe básica até arrow functions e closures. Os alunos criam funções puras, funções que retornam funções e usam callbacks em cenários simulados.
 
-**Atividades desenvolvidas para o Projeto @arizeviecelli**
+**Atividades desenvolvidas para o Projeto @karizeviecelli**
 
 ---
 
@@ -209,4 +209,4 @@ A aula final une tudo o que foi aprendido para criar páginas dinâmicas. O alun
 
 ---
 
-*Este planejamento foi elaborado para o Projeto @arizeviecelli como parte do material didático do módulo de JavaScript.*  
+*Este planejamento foi elaborado para o Projeto @karizeviecelli como parte do material didático do módulo de JavaScript.*  
