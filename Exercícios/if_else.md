@@ -1,5 +1,5 @@
 
-````markdown
+
 # Lista de Exercícios - Estruturas Condicionais
 
 ## 1. Maior entre dois números
@@ -333,4 +333,4 @@ Depois:
 x = 20
 y = 10
 ```
-````
+
