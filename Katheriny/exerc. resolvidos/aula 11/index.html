@@ -8,13 +8,21 @@
 </head>
 
 <body>
+    <!--Alterando título com botão-->
 
     <h1 id="titulo">Minha primeira página com DOM</h1>
 
-    <button onclick="alterarTitulo()">Clique aqui</button>
+    <button onclick="alterarTitulo()">Trocar título</button>
+
+    <!--Evento onclick-->
+
+    <h1>Evento onclick</h1>
 
     <button onclick="mostrarMensagem()">Clique aqui</button>
 
+    <!-- Capturando valores de campos input -->
+
+    <h1>Capturando valores de campos input</h1>
 
     <input type="text" id="nome" placeholder="Digite seu nome">
     <button onclick="mostrarNome()">Mostrar nome</button>
@@ -28,10 +36,64 @@
     <button onclick="verificarIdade()">Verificar</button>
     <p id="resultadoIdade"></p>
 
-<h1>Alterando imagens com DOM</h1>
+    <!-- 12.Alterando imagens com DOM -->
 
-<img id="imagem" src="/Katheriny/exerc. resolvidos/aula 11/img/imgjs.jpg" width="250">
-<button onclick="trocarImagem()">Trocar imagem</button>
+    <h1>Alterando imagens com DOM</h1>
+
+    <img id="imagem" src="/Katheriny/exerc. resolvidos/aula 11/img/imgjs.jpg" width="250">
+    <button onclick="trocarImagem()">Trocar imagem</button>
+
+    <!-- 13.Mostrar e esconder elementos -->
+
+    <h1>Mostrar e esconder elementos</h1>
+
+    <p id="texto">Mensagem secreta</p>
+    <button onclick="esconderTexto()">Esconder</button>
+    <button onclick="mostrarTexto()">Mostrar</button>
+
+    <!-- 14.Criando elementos com JavaScript-->
+
+    <h1>Criando elementos com JavaScript</h1>
+
+    <div id="area"></div>
+    <button onclick="criarParagrafo()">Criar parágrafo</button>
+
+    <!-- 15.Removendo elementos-->
+
+    <h1>Removendo elementos</h1>
+
+    <p id="aviso">Este texto será removido.</p>
+    <button onclick="removerAviso()">Remover</button>
+
+    <!--16.Calculadora de IMC-->
+
+    <h1>Calculadora de IMC</h1>
+
+    <label>Peso:</label>
+    <input type="number" id="peso" placeholder="Ex: 70">
+
+    <br><br>
+
+    <label>Altura:</label>
+    <input type="number" id="altura" placeholder="Ex: 1.75" step="0.01">
+
+    <br><br>
+
+    <button onclick="calcularIMC()">Calcular</button>
+
+    <p id="resultadoIMC"></p>
+
+    <!--17.Lista de tarefas simples-->
+
+    <h1>Minha lista de tarefas</h1>
+
+    <input type="text" id="tarefa" placeholder="Digite uma tarefa">
+    <button onclick="adicionarTarefa()">Adicionar</button>
+
+    <ul id="lista"></ul>
+
+    
+
 
     <script src="script.js"></script>
 </body>
