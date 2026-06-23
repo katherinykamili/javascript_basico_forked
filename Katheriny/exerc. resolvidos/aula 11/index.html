@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de DOM</title>
+</head>
+
+<body>
+
+    <h1 id="titulo">Minha primeira página com DOM</h1>
+
+    <button onclick="alterarTitulo()">Clique aqui</button>
+
+    <script>
+        function alterarTitulo() {
+            document.getElementById("titulo").innerText = "Título alterado com JavaScript!";
+        }
+    </script>
+
+    <script src="index.html"></script>
+</body>
+
+</html>
