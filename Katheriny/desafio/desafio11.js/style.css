@@ -1,0 +1,143 @@
+/* css/estilos.css — Aula 12: Desafio Prático - Sistema de Cadastro de Filmes*/
+
+/* 1. VARIÁVEIS GLOBAIS */
+:root {
+  --cor-primaria: #6b3f2a;
+  --cor-secundaria: #a0623a;
+  --cor-destaque: #c9956c;
+  --cor-fundo: #fdf8f4;
+  --cor-fundo-suave: #f5ede4;
+  --cor-fundo-medio: #e8d5c4;
+  --cor-branco: #fffcf9;
+  --cor-texto: #3b2415;
+  --cor-texto-suave: #7a5c47;
+  --sombra: 0 15px 40px rgba(107, 63, 42, 0.10);
+  --borda: rgba(161, 98, 58, 0.18);
+}
+
+/* . RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*  CONTAINER */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(12px, 4vw, 24px);
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--cor-texto);
+  line-height: 1.6;
+  background:
+    radial-gradient(circle at top left, rgba(232, 213, 196, 0.80), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(201, 149, 108, 0.16), transparent 30%),
+    linear-gradient(180deg, #fffcf9 0%, #fdf8f4 100%);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 6. HEADER */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(253, 248, 244, 0.88);
+  border-bottom: 1px solid var(--borda);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 16px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--cor-primaria);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.logo-letra {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--cor-destaque), var(--cor-primaria));
+  color: var(--cor-branco);
+  font-size: 1.3rem;
+  font-weight: 700;
+  box-shadow: var(--sombra);
+  flex-shrink: 0;
+}
+
+.logo-nome {
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
+nav a {
+  color: var(--cor-texto);
+  font-weight: 500;
+  padding: 10px 16px;
+  border-radius: 999px;
+  transition: background 0.3s, color 0.3s;
+  display: block;
+  white-space: nowrap;
+}
+
+nav a:hover {
+  color: var(--cor-primaria);
+  background: rgba(201, 149, 108, 0.12);
+}
+
+.formulario,
+.filme {
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.filme {
+  border: 2px solid black;
+}
+
+.erro {
+  font-weight: bold;
+}
+
+.dark-mode {
+  background: #111;
+  color: white;
+}
+
+#listaFilmes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.filme button {
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}

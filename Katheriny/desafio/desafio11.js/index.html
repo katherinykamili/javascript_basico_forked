@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+    <title>Meus filmes favoritos</title>
+</head>
+
+<body>
+    <!-- CABEÇALHO -->
+    <header>
+         
+        <div class="container">
+            <nav>
+                <a class="logo" href="index.html">
+                    <span class="logo-letra">C</span>
+                    <span class="logo-nome">CineMax</span>
+                    <button id="btnModo">Modo Escuro</button>
+                </a>
+            </nav>
+            
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+
+    <main>
+
+        <section class="formulario">
+            <label for="nomeFilme">Nome do Filme</label>
+            <input id="nomeFilme" type="text" placeholder="A culpa é das estrelas">
+
+            <label for="genero">Gênero</label>
+            <input id="genero" type="text" placeholder="Romance">
+
+            <label for="ano">Ano de Lançamento</label>
+            <input id="ano" type="number" placeholder="Ex: 2014" min="1900" max="2099" step="1">
+
+            <button id="btnCadastrar">Cadastrar Filme</button>
+            <p id="mensagem"></p>
+        </section>
+
+
+        <section>
+            <h2 id="contador">Filmes cadastrados: 0</h2>
+            <div id="listaFilmes"></div>
+        </section>
+
+    </main>
+    <script src="index.html"></script>
+</body>
+
+</html>
