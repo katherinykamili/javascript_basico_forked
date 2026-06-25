@@ -52,6 +52,7 @@ header {
   z-index: 999;
   background: rgba(253, 248, 244, 0.88);
   border-bottom: 1px solid var(--borda);
+  text-decoration: none;
 }
 
 nav {
@@ -70,6 +71,7 @@ nav {
   color: var(--cor-primaria);
   font-weight: 700;
   flex-shrink: 0;
+  text-decoration: none;
 }
 
 .logo-letra {
@@ -85,11 +87,13 @@ nav {
   font-weight: 700;
   box-shadow: var(--sombra);
   flex-shrink: 0;
+  text-decoration: none;
 }
 
 .logo-nome {
   font-size: 1rem;
   letter-spacing: 0.04em;
+  text-decoration: none;
 }
 
 nav a {
@@ -141,3 +145,4 @@ nav a:hover {
   border-radius: 8px;
   cursor: pointer;
 }
+

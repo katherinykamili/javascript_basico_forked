@@ -1,7 +1,8 @@
 const nomeFilme = document.getElementById("nomeFilme");
 const genero = document.getElementById("genero")
 // Define o ano atual automaticamente no input
-document.getElementById('ano').value = new Date().getFullYear();
+const ano = document.getElementById('ano').value = new Date().getFullYear();
+
 const btnCadastrar = document.getElementById("btnCadastrar");
 const btnModo = document.getElementById("btnModo");
 const mensagem = document.getElementById("mensagem");
@@ -52,6 +53,11 @@ btnExcluir.addEventListener("click", function () {
   totalFilmes--;
   atualizarContador();
 });
+
+nomeFilme.value = "";
+genero.value = "";
+ano.value = "";
+mensagem.textContent = "";
 
 btnCadastrar.addEventListener("click", function () {
   if (nomeFilme.value === "" || genero.value === "" || ano.value === "") {
