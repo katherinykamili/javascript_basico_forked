@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Sistema de Cadastro de Filmes</title>
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 Cadastro de Filmes</h1>
+            <p class="subtitle">Organize seus filmes favoritos em um único lugar</p>
+        </header>
+
+        <section class="form-section">
+            <h2>Adicionar Novo Filme</h2>
+
+            <form id="formulario">
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <label for="nome">Nome do Filme</label>
+                        <input
+                            type="text"
+                            id="nome"
+                            placeholder="Ex: Homem-Aranha"
+                        >
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="genero">Gênero</label>
+                        <input
+                            type="text"
+                            id="genero"
+                            placeholder="Ex: Ação, Drama, Comédia"
+                        >
+                    </div>
+
+                    <div class="input-wrapper">
+                        <label for="ano">Ano de Lançamento</label>
+                        <input
+                            type="number"
+                            id="ano"
+                            placeholder="Ex: 2024"
+                            min="1900"
+                            max="2100"
+                        >
+                    </div>
+                </div>
+
+                <button type="button" class="btn-cadastrar" id="botaoCadastrar">
+                    ➕ Cadastrar Filme
+                </button>
+
+                <div id="mensagemValidacao"></div>
+            </form>
+        </section>
+
+        <section class="movies-section">
+            <h2>Filmes Cadastrados</h2>
+            <div class="counter">
+                Filmes cadastrados: <span id="contador">0</span>
+            </div>
+
+            <div id="listaFilmes" class="movies-container">
+                <div class="empty-state">
+                    <div class="emoji">🍿</div>
+                    <p>Nenhum filme cadastrado ainda. Comece adicionando seus filmes favoritos!</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+       
+        let filmes = [];
+        const inputNome = document.getElementById("nome");
+        const inputGenero = document.getElementById("genero");
+        const inputAno = document.getElementById("ano");
+        const botaoCadastrar = document.getElementById("botaoCadastrar");
+        const listaFilmes = document.getElementById("listaFilmes");
+        const mensagemValidacao = document.getElementById("mensagemValidacao");
+        const contador = document.getElementById("contador");
+
+        botaoCadastrar.addEventListener("click", function() {
+            cadastrarFilme();
+        });
+
+        inputAno.addEventListener("keyup", function(evento) {
+            if (evento.keyCode === 13) {
+                cadastrarFilme();
+            }
+        });
+
+        function cadastrarFilme() {
+            const nome = inputNome.value.trim();
+            const genero = inputGenero.value.trim();
+            const ano = inputAno.value.trim();
+            if (nome === "" || genero === "" || ano === "") {
+                // Exibe mensagem de erro
+                exibirMensagem("Preencha todos os campos!", false);
+                return;
+            }
+
+            if (ano < 1900 || ano > 2100) {
+                exibirMensagem("Digite um ano válido (1900-2100)!", false);
+                return;
+            }
+
+            const filme = {
+                id: Date.now(),
+                nome: nome,
+                genero: genero,
+                ano: ano
+            };
+
+            filmes.push(filme);
+            exibirMensagem("Filme cadastrado com sucesso! 🎉", true);
+            limparFormulario();
+            atualizarListaFilmes();
+            atualizarContador();
+        }
+
+        function excluirFilme(id) {
+            const indice = filmes.findIndex(function(filme) {
+                return filme.id === id;
+            });
+
+            if (indice !== -1) {
+                filmes.splice(indice, 1);
+                atualizarListaFilmes();
+                atualizarContador();
+            }
+        }
+
+        function atualizarListaFilmes() {
+            listaFilmes.innerHTML = "";
+            if (filmes.length === 0) {
+                const emptyState = document.createElement("div");
+                emptyState.classList.add("empty-state");
+                emptyState.innerHTML = `
+                    <div class="emoji">🍿</div>
+                    <p>Nenhum filme cadastrado ainda. Comece adicionando seus filmes favoritos!</p>
+                `;
+                listaFilmes.appendChild(emptyState);
+                return;
+            }
+            filmes.forEach(function(filme) {
+                criarCardFilme(filme);
+            });
+        }
+
+        function criarCardFilme(filme) {
+            const card = document.createElement("div");
+            card.classList.add("filme");
+            card.innerHTML = `
+                <!-- Título do filme com ícone -->
+                <h3>🎬 ${filme.nome}</h3>
+
+                <!-- Container de informações do filme -->
+                <div class="filme-info">
+                    <!-- Linha com o gênero -->
+                    <div class="info-row">
+                        <span>🎭</span>
+                        <strong>${filme.genero}</strong>
+                    </div>
+
+                    <!-- Linha com o ano -->
+                    <div class="info-row">
+                        <span>📅</span>
+                        <strong>${filme.ano}</strong>
+                    </div>
+                </div>
+
+                <!-- Botão de exclusão -->
+                <button class="btn-excluir" onclick="excluirFilme(${filme.id})">
+                    🗑️ Excluir
+                </button>
+            `;
+            listaFilmes.appendChild(card);
+        }
+        function atualizarContador() {
+            contador.textContent = filmes.length;
+        }
+        function limparFormulario() {
+            inputNome.value = "";
+            inputGenero.value = "";
+            inputAno.value = "";
+            inputNome.focus();
+        }
+        function exibirMensagem(texto, sucesso) {
+            mensagemValidacao.innerHTML = "";
+            const mensagem = document.createElement("div");
+            mensagem.classList.add("validation-message");
+            if (sucesso) {
+                mensagem.classList.add("success");
+            }
+            mensagem.textContent = texto;
+            mensagemValidacao.appendChild(mensagem);
+            setTimeout(function() {
+                if (mensagem.parentNode) {
+                    mensagem.remove();
+                }
+            }, 4000);
+        }
+    </script>
+</body>
+</html>

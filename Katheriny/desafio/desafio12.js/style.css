@@ -1,0 +1,328 @@
+/* RESET E VARIÁVEIS GLOBAIS */
+
+/* Remove margens e padding padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define variáveis CSS reutilizáveis */
+:root {
+    --cor-primaria: #6366f1;
+    --cor-secundaria: #ec4899;
+    --cor-fundo: #f8fafc;
+    --cor-texto: #1e293b;
+    --cor-border: #e2e8f0;
+    --cor-erro: #ef4444;
+    --cor-sucesso: #10b981;
+    --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transicao: all 0.3s ease;
+}
+
+/* ESTILOS DO BODY E LAYOUT PRINCIPAL */
+
+/* Aplica estilos ao body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--cor-fundo) 0%, #f1f5f9 100%);
+    color: var(--cor-texto);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container principal que centraliza o conteúdo */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* HEADER E TÍTULO */
+
+/* Estilo do header (cabeçalho) */
+header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Estilo do título principal */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: var(--cor-primaria);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo do subtítulo */
+.subtitle {
+    font-size: 1.1em;
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+/* SEÇÃO DO FORMULÁRIO */
+
+/* Container do formulário */
+.form-section {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+    margin-bottom: 30px;
+}
+
+/* Titulo da seção de formulário */
+.form-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: var(--cor-primaria);
+}
+
+/* Container que agrupa os campos do formulário */
+.form-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Estilo de cada campo do formulário */
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--cor-border);
+    border-radius: 8px;
+    font-size: 1em;
+    transition: var(--transicao);
+}
+
+/* Foco do input (quando clicado) */
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* Label dos campos do formulário */
+.form-group label {
+    font-size: 0.9em;
+    color: #64748b;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: 600;
+}
+
+/* Wrapper que agrupa label e input */
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+/* BOTÃO DE CADASTRO */
+
+/* Estilo do botão principal */
+.btn-cadastrar {
+    width: 100%;
+    padding: 12px 24px;
+    font-size: 1.1em;
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transicao);
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+/* Hover do botão (quando passa o mouse) */
+.btn-cadastrar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+}
+
+.btn-cadastrar:active {
+    transform: translateY(0);
+}
+
+/* MENSAGENS DE VALIDAÇÃO */
+
+/* Container de mensagem de erro */
+.validation-message {
+    margin-top: 15px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    background: #fee2e2;
+    color: var(--cor-erro);
+    border-left: 4px solid var(--cor-erro);
+    animation: slideInDown 0.3s ease;
+}
+
+/* Mensagem de sucesso */
+.validation-message.success {
+    background: #d1fae5;
+    color: var(--cor-sucesso);
+    border-left-color: var(--cor-sucesso);
+}
+
+/* SEÇÃO DE FILMES */
+
+/* Container da lista de filmes */
+.movies-section {
+    margin-top: 30px;
+}
+
+/* Título da seção de filmes */
+.movies-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: var(--cor-primaria);
+}
+
+/* Contador de filmes */
+.counter {
+    background: white;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--cor-primaria);
+    box-shadow: var(--sombra);
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* CARDS DE FILMES */
+
+/* Container que agrupa todos os cards */
+.movies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Card do filme */
+.filme {
+    background: white;
+    border-radius: 12px;
+    border: 2px solid var(--cor-border);
+    padding: 20px;
+    box-shadow: var(--sombra);
+    transition: var(--transicao);
+    animation: slideUp 0.4s ease;
+}
+
+/* Hover do card (quando passa o mouse) */
+.filme:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    border-color: var(--cor-primaria);
+}
+
+/* Titulo do filme (nome) */
+.filme h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: var(--cor-primaria);
+}
+
+/* Informações do filme (gênero e ano) */
+.filme-info {
+    margin-bottom: 15px;
+}
+
+/* Cada linha de informação */
+.info-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    color: #475569;
+}
+
+/* Ícone antes do texto */
+.info-row span:first-child {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* Botão de exclusão */
+.btn-excluir {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    background: var(--cor-erro);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transicao);
+    font-weight: bold;
+}
+
+.btn-excluir:hover {
+    background: #dc2626;
+    transform: scale(1.02);
+}
+
+/* MENSAGEM DE LISTA VAZIA */
+
+/* Mensagem quando não há filmes */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #94a3b8;
+}
+
+/* Emoji grande */
+.empty-state .emoji {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+/* ANIMAÇÕES */
+
+/* Animação de slide para cima */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animação de slide para baixo */
+@keyframes slideInDown {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* RESPONSIVIDADE */
+
+/* Estilos para telas pequenas (celulares) */
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 1.8em;
+    }
+    .form-section {
+        padding: 20px;
+    }
+    .form-group {
+        grid-template-columns: 1fr;
+    }
+    .movies-container {
+        grid-template-columns: 1fr;
+    }
+}
