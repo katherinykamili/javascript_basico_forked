@@ -9,14 +9,14 @@
 
 /* Define variáveis CSS reutilizáveis */
 :root {
-    --cor-primaria: #6366f1;
-    --cor-secundaria: #ec4899;
-    --cor-fundo: #f8fafc;
-    --cor-texto: #1e293b;
-    --cor-border: #e2e8f0;
+    --cor-primaria: #6b3f2a;
+    --cor-secundaria:  #a0623a;
+    --cor-fundo: #fdf8f4;
+    --cor-texto: #3b2415;
+    --cor-border: rgba(161, 98, 58, 0.18);
     --cor-erro: #ef4444;
     --cor-sucesso: #10b981;
-    --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --sombra: 0 14px 30px rgba(107, 63, 42, 0.22);
     --transicao: all 0.3s ease;
 }
 
@@ -102,7 +102,7 @@ h1 {
 .form-group select:focus {
     outline: none;
     border-color: var(--cor-primaria);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    box-shadow: var(--sombra);
 }
 
 /* Label dos campos do formulário */
@@ -134,13 +134,13 @@ h1 {
     cursor: pointer;
     transition: var(--transicao);
     font-weight: bold;
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+    box-shadow: var(--sombra);
 }
 
 /* Hover do botão (quando passa o mouse) */
 .btn-cadastrar:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+    box-shadow: 0 14px 30px rgba(107, 63, 42, 0.22);
 }
 
 .btn-cadastrar:active {
@@ -215,7 +215,7 @@ h1 {
 
 /* Hover do card (quando passa o mouse) */
 .filme:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--sombra);
     transform: translateY(-5px);
     border-color: var(--cor-primaria);
 }

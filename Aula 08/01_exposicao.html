@@ -4,31 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aula 8 - Funções</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8fafc; color: #1e293b; }
-    .topbar { position: fixed; top: 0; left: 0; width: 100%; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; z-index: 10; }
-    .topbar h1 { font-size: 1.2rem; color: #0891b2; }
-    .topbar .timer { font-size: 1rem; color: #64748b; }
-    .slides-container { margin-top: 70px; position: relative; width: 100%; max-width: 900px; margin-left: auto; margin-right: auto; padding: 20px; }
-    .slide { display: none; opacity: 0; transition: opacity 0.5s ease; padding: 40px; background: white; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-    .slide.active { display: block; opacity: 1; }
-    .slide h2 { color: #0891b2; margin-bottom: 16px; font-size: 1.5rem; }
-    .slide p { margin-bottom: 16px; line-height: 1.6; }
-    .code-block { background: #1e293b; color: #e2e8f0; padding: 16px; border-radius: 8px; overflow-x: auto; font-family: 'Courier New', monospace; margin-bottom: 16px; }
-    .highlight-box { background: #e0f2fe; border-left: 4px solid #0891b2; padding: 12px 16px; border-radius: 4px; margin-bottom: 16px; }
-    .navigation { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; }
-    .nav-arrows { display: flex; gap: 12px; }
-    .nav-btn { background: #0891b2; color: white; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 1.2rem; transition: background 0.3s; }
-    .nav-btn:hover { background: #066a8a; }
-    .progress-dots { display: flex; gap: 8px; }
-    .dot { width: 12px; height: 12px; border-radius: 50%; background: #cbd5e1; cursor: pointer; transition: background 0.3s; }
-    .dot.active { background: #0891b2; }
-    .cta-btn { display: inline-block; background: #0891b2; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; transition: background 0.3s; margin-top: 20px; }
-    .cta-btn:hover { background: #066a8a; }
-    footer { text-align: center; padding: 20px; color: #64748b; margin-top: 40px; }
-  </style>
 </head>
+
 <body>
   <div class="topbar">
     <h1>Aula 8 - Funções</h1>
@@ -108,7 +85,9 @@ console.log(somar(1, 2, 3)); // 6</div>
       <div class="progress-dots" id="dots"></div>
     </div>
   </div>
+
   <footer>📖 Aula 8 · Projeto @karizeviecelli</footer>
+
   <script>
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
@@ -154,5 +133,6 @@ console.log(somar(1, 2, 3)); // 6</div>
       timerEl.textContent = `${mins}:${secs}`;
     }, 1000);
   </script>
+  
 </body>
 </html>

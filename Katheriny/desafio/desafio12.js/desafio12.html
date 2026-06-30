@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>🎬 Sistema de Cadastro de Filmes</title>
-    
+
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -20,34 +23,21 @@
                 <div class="form-group">
                     <div class="input-wrapper">
                         <label for="nome">Nome do Filme</label>
-                        <input
-                            type="text"
-                            id="nome"
-                            placeholder="Ex: Homem-Aranha"
-                        >
+                        <input type="text" id="nome" placeholder="Ex: Homem-Aranha">
                     </div>
 
                     <div class="input-wrapper">
                         <label for="genero">Gênero</label>
-                        <input
-                            type="text"
-                            id="genero"
-                            placeholder="Ex: Ação, Drama, Comédia"
-                        >
+                        <input type="text" id="genero" placeholder="Ex: Ação, Drama, Comédia">
                     </div>
 
                     <div class="input-wrapper">
                         <label for="ano">Ano de Lançamento</label>
-                        <input
-                            type="number"
-                            id="ano"
-                            placeholder="Ex: 2024"
-                            min="1900"
-                            max="2100"
-                        >
+                        <input type="number" id="ano" placeholder="Ex: 2024" min="1900" max="2100">
                     </div>
                 </div>
 
+                <!-- Botão para cadastrar o filme -->
                 <button type="button" class="btn-cadastrar" id="botaoCadastrar">
                     ➕ Cadastrar Filme
                 </button>
@@ -56,13 +46,17 @@
             </form>
         </section>
 
+        <!-- SEÇÃO DE FILMES CADASTRADOS -->
         <section class="movies-section">
             <h2>Filmes Cadastrados</h2>
+            <!-- Contador de filmes -->
             <div class="counter">
                 Filmes cadastrados: <span id="contador">0</span>
             </div>
 
+            <!-- Container para os cards dos filmes -->
             <div id="listaFilmes" class="movies-container">
+                <!-- Mensagem de lista vazia -->
                 <div class="empty-state">
                     <div class="emoji">🍿</div>
                     <p>Nenhum filme cadastrado ainda. Comece adicionando seus filmes favoritos!</p>
@@ -72,7 +66,10 @@
     </div>
 
     <script>
-       
+        /* ===================================
+                   VARIÁVEIS GLOBAIS
+        =================================== */
+
         let filmes = [];
         const inputNome = document.getElementById("nome");
         const inputGenero = document.getElementById("genero");
@@ -82,31 +79,43 @@
         const mensagemValidacao = document.getElementById("mensagemValidacao");
         const contador = document.getElementById("contador");
 
-        botaoCadastrar.addEventListener("click", function() {
-            cadastrarFilme();
+        // Adiciona um ouvinte para o clique no botão de cadastrar
+        botaoCadastrar.addEventListener("click", function () {
+            cadastrarFilme();// Chama a função de cadastro de filme
         });
 
-        inputAno.addEventListener("keyup", function(evento) {
+        // Permite cadastrar filme ao pressionar Enter no último input
+        inputAno.addEventListener("keyup", function (evento) {
+            // Verifica se a tecla pressionada foi Enter (keyCode 13)
             if (evento.keyCode === 13) {
+                // Chama a função de cadastro
                 cadastrarFilme();
             }
         });
 
+        /* ===================================
+             FUNÇÃO DE CADASTRO DE FILME
+        =================================== */
+
         function cadastrarFilme() {
             const nome = inputNome.value.trim();
             const genero = inputGenero.value.trim();
+
+            // VALIDAÇÃO: Verifica se algum campo está vazio
             const ano = inputAno.value.trim();
             if (nome === "" || genero === "" || ano === "") {
                 // Exibe mensagem de erro
                 exibirMensagem("Preencha todos os campos!", false);
                 return;
             }
-
+            // VALIDAÇÃO: Verifica se o ano é válido
             if (ano < 1900 || ano > 2100) {
                 exibirMensagem("Digite um ano válido (1900-2100)!", false);
+                // Para a execução da função
                 return;
             }
 
+            // Cria um objeto com os dados do filme
             const filme = {
                 id: Date.now(),
                 nome: nome,
@@ -114,6 +123,7 @@
                 ano: ano
             };
 
+            // Adiciona o filme ao array de filmes
             filmes.push(filme);
             exibirMensagem("Filme cadastrado com sucesso! 🎉", true);
             limparFormulario();
@@ -121,17 +131,26 @@
             atualizarContador();
         }
 
+        /* ===================================
+             FUNÇÃO DE EXCLUSÃO DE FILME
+        =================================== */
+
         function excluirFilme(id) {
-            const indice = filmes.findIndex(function(filme) {
+            const indice = filmes.findIndex(function (filme) {
+                // Compara o ID do filme
                 return filme.id === id;
             });
 
+            // Verifica se o filme foi encontrado
             if (indice !== -1) {
                 filmes.splice(indice, 1);
                 atualizarListaFilmes();
                 atualizarContador();
             }
         }
+        /* ===================================
+            FUNÇÃO DE ATUALIZAÇÃO DA LISTA
+        ================================== */
 
         function atualizarListaFilmes() {
             listaFilmes.innerHTML = "";
@@ -142,17 +161,25 @@
                     <div class="emoji">🍿</div>
                     <p>Nenhum filme cadastrado ainda. Comece adicionando seus filmes favoritos!</p>
                 `;
+
+                // Adiciona o elemento ao container
                 listaFilmes.appendChild(emptyState);
                 return;
             }
-            filmes.forEach(function(filme) {
+            filmes.forEach(function (filme) {
                 criarCardFilme(filme);
             });
         }
 
+        /* ===================================
+            FUNÇÃO DE CRIAÇÃO DE CARD
+        =================================== */
+
         function criarCardFilme(filme) {
             const card = document.createElement("div");
             card.classList.add("filme");
+
+            // Cria o conteúdo HTML do card
             card.innerHTML = `
                 <!-- Título do filme com ícone -->
                 <h3>🎬 ${filme.nome}</h3>
@@ -177,17 +204,33 @@
                     🗑️ Excluir
                 </button>
             `;
+            // Adiciona o card ao container de filmes
             listaFilmes.appendChild(card);
         }
+
+        /* ===================================
+            FUNÇÃO DE ATUALIZAÇÃO DO CONTADOR
+         =================================== */
+
         function atualizarContador() {
             contador.textContent = filmes.length;
         }
+
+        /* ===================================
+            FUNÇÃO DE LIMPEZA DO FORMULÁRIO
+        =================================== */
+
         function limparFormulario() {
             inputNome.value = "";
             inputGenero.value = "";
             inputAno.value = "";
             inputNome.focus();
         }
+
+        /* ===================================
+            FUNÇÃO DE EXIBIÇÃO DE MENSAGENS
+         =================================== */
+
         function exibirMensagem(texto, sucesso) {
             mensagemValidacao.innerHTML = "";
             const mensagem = document.createElement("div");
@@ -197,7 +240,7 @@
             }
             mensagem.textContent = texto;
             mensagemValidacao.appendChild(mensagem);
-            setTimeout(function() {
+            setTimeout(function () {
                 if (mensagem.parentNode) {
                     mensagem.remove();
                 }
@@ -205,4 +248,5 @@
         }
     </script>
 </body>
+
 </html>
