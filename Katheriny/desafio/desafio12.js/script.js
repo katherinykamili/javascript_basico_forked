@@ -1,181 +1,117 @@
-/* SISTEMA DE CADASTRO DE FILMES */
-
-/* VARIÁVEIS GLOBAIS */
-let filmes = [];
 const inputNome = document.getElementById("nome");
 const inputGenero = document.getElementById("genero");
 const inputAno = document.getElementById("ano");
 const botaoCadastrar = document.getElementById("botaoCadastrar");
+const botaoTema = document.getElementById("botaoTema");
 const listaFilmes = document.getElementById("listaFilmes");
 const mensagemValidacao = document.getElementById("mensagemValidacao");
 const contador = document.getElementById("contador");
 
-/* INICIALIZAÇÃO - EVENT LISTENERS */
-botaoCadastrar.addEventListener("click", function () {
-    cadastrarFilme();
+let filmes = JSON.parse(localStorage.getItem("filmes")) || [];
+
+document.addEventListener("DOMContentLoaded", () => {
+  atualizarListaFilmes();
+  atualizarContador();
 });
 
-inputAno.addEventListener("keyup", function (evento) {
-    if (evento.keyCode === 13) {
-        cadastrarFilme();
-    }
+botaoCadastrar.addEventListener("click", cadastrarFilme);
+
+botaoTema.addEventListener("click", function () {
+  document.body.classList.toggle("dark-mode");
 });
 
 function cadastrarFilme() {
-    const nome = inputNome.value.trim();
-    const genero = inputGenero.value.trim();
-    const ano = inputAno.value.trim();
+  const nome = inputNome.value.trim();
+  const genero = inputGenero.value;
+  const ano = inputAno.value.trim();
 
-    /* VALIDAÇÃO 1: Verifica se todos os campos foram preenchidos */
+  if (nome === "" || genero === "" || ano === "") {
+    exibirMensagem("Preencha todos os campos!", false);
+    return;
+  }
 
-    if (nome === "" || genero === "" || ano === "") {
-        exibirMensagem("Preencha todos os campos!", false);
-        return;
-    }
+  if (ano < 1900 || ano > 2100) {
+    exibirMensagem("Digite um ano válido!", false);
+    return;
+  }
 
-    /* VALIDAÇÃO 2: Verifica se o ano é válido */
+  const filme = {
+    id: Date.now(),
+    nome,
+    genero,
+    ano
+  };
 
-    if (ano < 1900 || ano > 2100) {
-        exibirMensagem("Digite um ano válido (1900-2100)!", false);
-        return;
-    }
+  filmes.push(filme);
+  salvarFilmes();
+  atualizarListaFilmes();
+  atualizarContador();
+  limparFormulario();
 
-    /* CRIAR OBJETO FILME */
-
-    const filme = {
-        id: Date.now(),
-        nome: nome,
-        genero: genero,
-        ano: ano
-    };
-
-    /* ADICIONAR FILME AO ARRAY */
-
-    filmes.push(filme); // push() adiciona um elemento no final do array.
-    exibirMensagem("Filme cadastrado com sucesso! 🎉", true);
-    limparFormulario();
-    atualizarListaFilmes();
-    atualizarContador();
+  exibirMensagem("Filme cadastrado com sucesso!", true);
 }
-
-/* === FUNÇÃO: EXCLUIR FILME === */
 
 function excluirFilme(id) {
-    const indice = filmes.findIndex(function (filme) {
-        return filme.id === id;
-    });
-
-    if (indice !== -1) {  // Verifica se o filme foi encontrado (índice !== -1)
-        filmes.splice(indice, 1);
-        atualizarListaFilmes();
-        atualizarContador();
-    }
+  filmes = filmes.filter((filme) => filme.id !== id);
+  salvarFilmes();
+  atualizarListaFilmes();
+  atualizarContador();
 }
-
-/* FUNÇÃO: ATUALIZAR LISTA DE FILMES */
 
 function atualizarListaFilmes() {
-    // innerHTML = "" limpa todo o conteúdo do elemento
-    listaFilmes.innerHTML = "";
-    /* VERIFICAÇÃO: Lista está vazia? */
-    if (filmes.length === 0) {
-        const emptyState = document.createElement("div");
-        emptyState.classList.add("empty-state");
-        emptyState.innerHTML = `
-            <div class="emoji">🍿</div>
-            <p>Nenhum filme cadastrado ainda. Comece adicionando seus filmes favoritos!</p>`;
-        listaFilmes.appendChild(emptyState);
-        return;
-    }
+  listaFilmes.innerHTML = "";
 
-    /* CRIAR CARD PARA CADA FILME */
-    // forEach() percorre cada elemento do array
-    filmes.forEach(function (filme) {
-        criarCardFilme(filme);
-    });
-}
+  if (filmes.length === 0) {
+    const vazio = document.createElement("div");
+    vazio.classList.add("empty-state");
+    vazio.innerHTML = `
+      <div class="emoji">🎬</div>
+      <p>Nenhum filme cadastrado ainda.</p>
+    `;
+    listaFilmes.appendChild(vazio);
+    return;
+  }
 
-/* FUNÇÃO: CRIAR CARD DO FILME */
-
-function criarCardFilme(filme) {
+  filmes.forEach((filme) => {
     const card = document.createElement("div");
     card.classList.add("filme");
 
-    /* DEFINIR CONTEÚDO HTML DO CARD */
-
     card.innerHTML = `
-        <!-- Título do filme com ícone de filme -->
-        <h3>🎬 ${filme.nome}</h3>
-
-        <!-- Container com informações adicionais -->
-        <div class="filme-info">
-            <!-- Linha com gênero -->
-            <div class="info-row">
-                <span>🎭</span>
-                <strong>${filme.genero}</strong>
-            </div>
-
-            <!-- Linha com ano -->
-            <div class="info-row">
-                <span>📅</span>
-                <strong>${filme.ano}</strong>
-            </div>
-        </div>
-
-        <!-- Botão para excluir o filme -->
-        <!-- onclick chama a função excluirFilme passando o id do filme -->
-        <button class="btn-excluir" onclick="excluirFilme(${filme.id})">
-            🗑️ Excluir
-        </button>
+      <h3>🎬 ${filme.nome}</h3>
+      <div class="filme-info">
+        <div class="info-row"><span>🎭</span><span>${filme.genero}</span></div>
+        <div class="info-row"><span>📅</span><span>${filme.ano}</span></div>
+      </div>
+      <button class="btn-excluir">Excluir</button>
     `;
 
-    /* ADICIONAR CARD AO CONTAINER */
-    // appendChild() adiciona um elemento filho ao final
-    listaFilmes.appendChild(card);
-}
+    card.querySelector(".btn-excluir").addEventListener("click", () => {
+      excluirFilme(filme.id);
+      card.remove();
+    });
 
-/* FUNÇÃO: ATUALIZAR CONTADOR */
+    listaFilmes.appendChild(card);
+  });
+}
 
 function atualizarContador() {
-    contador.textContent = filmes.length;
-    // textContent define o texto do elemento
-    // filmes.length retorna a quantidade de filmes no array
+  contador.textContent = `Filmes cadastrados: ${filmes.length}`;
 }
 
-/* FUNÇÃO: LIMPAR FORMULÁRIO */
+function salvarFilmes() {
+  localStorage.setItem("filmes", JSON.stringify(filmes));
+}
 
 function limparFormulario() {
-    inputNome.value = "";
-    inputGenero.value = "";
-    inputAno.value = "";
-    inputNome.focus();
-    // focus() coloca o cursor no campo
-    // Facilita o usuário adicionar outro filme
+  inputNome.value = "";
+  inputGenero.value = "";
+  inputAno.value = "";
+  inputNome.focus();
 }
-
-/* FUNÇÃO: EXIBIR MENSAGEM */
 
 function exibirMensagem(texto, sucesso) {
-    // Limpa mensagens anteriores
-    mensagemValidacao.innerHTML = "";
-    // Cria um novo elemento div para a mensagem
-    const mensagem = document.createElement("div");
-    mensagem.classList.add("validation-message");
-
-    /* APLICAR ESTILO DE SUCESSO OU ERRO */
-    if (sucesso) {
-        mensagem.classList.add("success");
-    }
-    // Define o texto da mensagem
-    mensagem.textContent = texto;
-    mensagemValidacao.appendChild(mensagem);
-
-    /* REMOVER MENSAGEM AUTOMATICAMENTE */
-    // setTimeout() executa código após um tempo
-    setTimeout(function () {
-        if (mensagem.parentNode) {
-            mensagem.remove();
-        }
-    }, 4000);
+  mensagemValidacao.textContent = texto;
+  mensagemValidacao.className = sucesso
+    ? "validation-message success"
+    : "validation-message";
 }
-

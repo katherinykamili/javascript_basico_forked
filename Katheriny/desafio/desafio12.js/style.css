@@ -10,7 +10,7 @@
 /* Define variáveis CSS reutilizáveis */
 :root {
     --cor-primaria: #6b3f2a;
-    --cor-secundaria:  #a0623a;
+    --cor-secundaria: #a0623a;
     --cor-fundo: #fdf8f4;
     --cor-texto: #3b2415;
     --cor-border: rgba(161, 98, 58, 0.18);
@@ -316,13 +316,32 @@ h1 {
     h1 {
         font-size: 1.8em;
     }
+
     .form-section {
         padding: 20px;
     }
+
     .form-group {
         grid-template-columns: 1fr;
     }
+
     .movies-container {
         grid-template-columns: 1fr;
+    }
+
+    .btn-tema {
+        margin-bottom: 20px;
+        padding: 10px 18px;
+        border: none;
+        border-radius: 8px;
+        background: var(--cor-primaria);
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    body.dark-mode {
+        background: linear-gradient(135deg, #111827 0%, #0f172a 100%);
+        color: #f9fafb;
     }
 }

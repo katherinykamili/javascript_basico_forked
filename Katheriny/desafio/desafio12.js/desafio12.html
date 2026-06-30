@@ -10,6 +10,10 @@
 </head>
 
 <body>
+    <button type="button" id="botaoTema" class="btn-tema">
+  Modo Escuro
+</button>
+
     <div class="container">
         <header>
             <h1>🎬 Cadastro de Filmes</h1>
@@ -28,7 +32,17 @@
 
                     <div class="input-wrapper">
                         <label for="genero">Gênero</label>
-                        <input type="text" id="genero" placeholder="Ex: Ação, Drama, Comédia">
+                        <select id="genero">
+                            <option value="">Selecione um gênero</option>
+                            <option value="Ação">Ação</option>
+                            <option value="Aventura">Aventura</option>
+                            <option value="Comédia">Comédia</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Terror">Terror</option>
+                            <option value="Ficção Científica">Ficção Científica</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Animação">Animação</option>
+                        </select>
                     </div>
 
                     <div class="input-wrapper">
