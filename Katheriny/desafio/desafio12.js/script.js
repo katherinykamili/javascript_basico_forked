@@ -13,16 +13,17 @@ function salvarFilmes() {
   localStorage.setItem("filmes", JSON.stringify(filmes));
 }
 
-function carregarTema() {
-  const tema = localStorage.getItem("tema") || "light";
-  document.body.classList.toggle("dark-mode", tema === "dark");
-  botaoTema.textContent = tema === "dark" ? "Modo Claro" : "Modo Escuro";
-}
 
 function alternarTema() {
-  const novoTema = document.body.classList.contains("dark-mode") ? "light" : "dark";
-  localStorage.setItem("tema", novoTema);
-  carregarTema();
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+        botaoTema.textContent = "☀️ Modo Claro";
+        localStorage.setItem("tema", "dark");
+    } else {
+        botaoTema.textContent = "🌙 Modo Escuro";
+        localStorage.setItem("tema", "light");
+    }
 }
 
 function atualizarContador() {
