@@ -341,7 +341,31 @@ h1 {
     }
 
     body.dark-mode {
-        background: linear-gradient(135deg, #111827 0%, #0f172a 100%);
-        color: #f9fafb;
-    }
+  background: linear-gradient(135deg, #111827 0%, #0f172a 100%);
+  color: #f9fafb;
+}
+
+body.dark-mode .form-section,
+body.dark-mode .counter,
+body.dark-mode .filme {
+  background: #1f2937;
+  color: #f9fafb;
+}
+
+body.dark-mode .subtitle,
+body.dark-mode .info-row {
+  color: #cbd5e1;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group select {
+  background: #111827;
+  color: #f9fafb;
+  border-color: #334155;
+}
+
+body.dark-mode .btn-tema {
+  background: #334155;
+  color: #fff;
+}
 }
