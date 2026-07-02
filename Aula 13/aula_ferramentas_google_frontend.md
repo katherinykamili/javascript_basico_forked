@@ -1,26 +1,32 @@
-# Aula: Ferramentas Google para Desenvolvedores Front-end
+# Aula – Ferramentas Google para Desenvolvedores Front-end
 
 **Carga horária:** 4 horas  
-**Público-alvo:** alunos iniciantes/intermediários em HTML, CSS e JavaScript  
-**Formato:** aula prática com demonstração, laboratório e pesquisa orientada  
+**Público-alvo:** alunos iniciantes em Desenvolvimento Front-end  
+**Formato:** aula prática com demonstração, inspeção, testes e pesquisa técnica  
 
 ---
 
 ## 1. Contexto da aula
 
-Você faz parte de uma equipe de desenvolvimento Front-end. A empresa recebeu a missão de criar uma landing page para divulgar um produto digital.
+Você foi contratado como **Desenvolvedor(a) Front-end Júnior** em uma empresa de tecnologia.
 
-Antes de entregar a página ao cliente, a equipe precisa verificar se ela está:
+Sua primeira missão é analisar, melhorar e apresentar uma página web simples utilizando ferramentas do ecossistema Google que são muito usadas no mercado.
 
-- funcionando corretamente;
-- visualmente organizada;
-- responsiva;
-- rápida;
-- acessível;
-- otimizada para mecanismos de busca;
-- com código limpo e fácil de manter.
+Durante esta aula, você irá aprender a utilizar:
 
-Para isso, utilizaremos ferramentas do ecossistema Google muito presentes no mercado de desenvolvimento Front-end.
+- Google Chrome
+- Chrome DevTools
+- Console
+- Elements
+- Network
+- Application
+- Lighthouse
+- PageSpeed Insights
+- Google Fonts
+- Material Symbols
+- Material Design
+- Google Search com operadores avançados
+- Gemini ou Google AI Studio como apoio à pesquisa técnica
 
 ---
 
@@ -28,60 +34,65 @@ Para isso, utilizaremos ferramentas do ecossistema Google muito presentes no mer
 
 Ao final da aula, o aluno deverá ser capaz de:
 
-- usar o Google Chrome como ferramenta de desenvolvimento;
-- utilizar o Chrome DevTools para inspecionar HTML, CSS e JavaScript;
-- identificar erros no Console;
-- analisar carregamento de arquivos na aba Network;
-- testar performance com Lighthouse;
-- comparar Lighthouse e PageSpeed Insights;
-- aplicar Google Fonts e Material Symbols em uma página;
-- compreender o uso de Material Design no mercado;
-- usar pesquisa técnica para resolver problemas;
-- elaborar um roteiro de pesquisa profissional.
+- Entender como ferramentas Google auxiliam no desenvolvimento Front-end.
+- Inspecionar HTML e CSS pelo Chrome DevTools.
+- Testar comandos JavaScript pelo Console.
+- Analisar arquivos carregados pela aba Network.
+- Avaliar performance, acessibilidade, boas práticas e SEO com Lighthouse.
+- Entender a diferença entre Lighthouse e PageSpeed Insights.
+- Utilizar Google Fonts e Material Symbols em uma página web.
+- Organizar um projeto Front-end com pastas separadas para CSS e JavaScript.
+- Utilizar pesquisa técnica com operadores avançados do Google.
+- Produzir um pequeno relatório técnico de análise Front-end.
 
 ---
 
-## 3. Ferramentas trabalhadas
+## 3. Organização da aula de 4 horas
 
-| Ferramenta | Uso principal no Front-end | Quando usar |
-|---|---|---|
-| Google Chrome | Navegador e ambiente de teste | Durante todo o desenvolvimento |
-| Chrome DevTools | Inspeção, debug e análise | Ao corrigir layout, erro ou performance |
-| Lighthouse | Auditoria de qualidade da página | Antes da entrega/publicação |
-| PageSpeed Insights | Teste de páginas publicadas | Após publicar ou comparar desempenho real |
-| Google Fonts | Tipografia para web | Durante a criação visual da interface |
-| Material Symbols | Ícones para interface | Em menus, botões, cards e ações |
-| Material Design | Sistema de design | Ao padronizar componentes e experiência |
-| Google Search | Pesquisa técnica | Ao resolver erros e buscar documentação |
-| Google AI Studio/Gemini | Apoio à análise e prototipação | Para revisar código, explicar erros e gerar ideias |
-
----
-
-## 4. Organização da aula 
+| Tempo | Atividade |
+|---|---|
+| 30 min | Introdução ao papel do Front-end e ferramentas Google |
+| 40 min | Estrutura do projeto HTML, CSS e JavaScript |
+| 45 min | Google Chrome e Chrome DevTools |
+| 35 min | Console, Elements, Network e Application |
+| 35 min | Lighthouse e PageSpeed Insights |
+| 25 min | Google Fonts, Material Symbols e Material Design |
+| 20 min | Pesquisa técnica com Google Search e IA |
+| 30 min | Desafio prático em grupo |
 
 ---
 
-# Parte 1 — Projeto base da aula
+# PARTE 1 – Estrutura inicial do projeto
 
-Crie uma pasta chamada:
+## 4. Estrutura de pastas
+
+Crie uma pasta chamada `projeto-google-front-end`.
+
+Dentro dela, organize os arquivos assim:
 
 ```text
-landing-page-google-tools
+projeto-google-front-end/
+│
+├── index.html
+│
+├── css/
+│   └── style.css
+│
+└── js/
+    └── script.js
 ```
 
-Dentro dela, crie três arquivos:
+Essa organização é muito comum em projetos Front-end simples.
 
-```text
-index.html
-|_ css
-  |_style.css
-|_ js
-  |_script.js
-```
+- O arquivo `index.html` guarda a estrutura da página.
+- A pasta `css` guarda os arquivos de estilo.
+- A pasta `js` guarda os arquivos JavaScript.
 
 ---
 
-## 1.1 Arquivo `index.html`
+## 5. Arquivo `index.html`
+
+Crie o arquivo `index.html` na raiz do projeto.
 
 ```html
 <!DOCTYPE html>
@@ -90,1271 +101,1274 @@ index.html
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Título exibido na aba do navegador e usado em SEO -->
-    <title>TechClass - Curso Front-end</title>
+    <meta name="description" content="Página prática para estudar ferramentas Google no desenvolvimento Front-end.">
 
-    <!-- Descrição usada por mecanismos de busca -->
-    <meta name="description" content="Landing page de exemplo para estudar ferramentas Google no desenvolvimento Front-end.">
+    <title>Ferramentas Google para Front-end</title>
 
-    <!-- Importação do arquivo CSS local -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- Arquivo CSS dentro da pasta css -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <!-- Cabeçalho principal da página -->
     <header class="cabecalho">
-        <h1>TechClass Front-end</h1>
-        <p>Aprenda a criar páginas rápidas, bonitas e profissionais.</p>
-        <button id="btnMensagem">Quero aprender</button>
+        <div class="container cabecalho-conteudo">
+            <div>
+                <h1>Ferramentas Google para Front-end</h1>
+                <p>Aprendendo a analisar, testar e melhorar páginas web.</p>
+            </div>
+
+            <span class="material-symbols-outlined icone-topo" aria-hidden="true">
+                code
+            </span>
+        </div>
     </header>
 
-    <!-- Conteúdo principal da página -->
-    <main>
-        <section class="cards">
-            <article class="card">
-                <h2>HTML</h2>
-                <p>Estrutura da página.</p>
-            </article>
+    <main class="container">
 
-            <article class="card">
-                <h2>CSS</h2>
-                <p>Estilo, cores, espaçamento e responsividade.</p>
-            </article>
+        <section class="hero">
+            <h2>Você está no papel de um(a) Front-end Júnior</h2>
+            <p>
+                Sua missão é melhorar esta página utilizando Chrome DevTools,
+                Lighthouse, PageSpeed Insights, Google Fonts e boas práticas de pesquisa.
+            </p>
 
-            <article class="card">
-                <h2>JavaScript</h2>
-                <p>Interatividade e comportamento.</p>
-            </article>
+            <button class="botao" id="btnMensagem">
+                Testar JavaScript
+            </button>
         </section>
 
-        <section class="formulario">
-            <h2>Receba novidades</h2>
+        <section class="cards" aria-label="Ferramentas estudadas">
 
-            <!-- O label melhora acessibilidade e usabilidade -->
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" placeholder="Digite seu e-mail">
+            <article class="card">
+                <span class="material-symbols-outlined" aria-hidden="true">travel_explore</span>
+                <h3>Chrome DevTools</h3>
+                <p>Inspecione HTML, CSS, JavaScript, rede, armazenamento e performance.</p>
+            </article>
 
-            <button id="btnCadastrar">Cadastrar</button>
-            <p id="resultado"></p>
+            <article class="card">
+                <span class="material-symbols-outlined" aria-hidden="true">speed</span>
+                <h3>Lighthouse</h3>
+                <p>Analise performance, acessibilidade, SEO e boas práticas da página.</p>
+            </article>
+
+            <article class="card">
+                <span class="material-symbols-outlined" aria-hidden="true">font_download</span>
+                <h3>Google Fonts</h3>
+                <p>Utilize fontes web de forma organizada e profissional.</p>
+            </article>
+
         </section>
+
+        <section class="formulario-area">
+            <h2>Teste de formulário</h2>
+            <p>Use esta área para analisar acessibilidade e comportamento no DevTools.</p>
+
+            <form id="formContato">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
+
+                <button type="submit" class="botao botao-secundario">
+                    Enviar
+                </button>
+            </form>
+
+            <p id="resultadoFormulario" class="resultado"></p>
+        </section>
+
     </main>
 
-    <!-- Rodapé da página -->
-    <footer>
-        <p>Desenvolvido para aula de ferramentas Google para Front-end.</p>
+    <footer class="rodape">
+        <p>Projeto desenvolvido para prática de ferramentas Google no Front-end.</p>
     </footer>
 
-    <!-- Importação do JavaScript no final para carregar após o HTML -->
+    <!-- Arquivo JavaScript dentro da pasta js -->
     <script src="js/script.js"></script>
 </body>
 </html>
 ```
 
+### Explicação dos principais pontos do HTML
+
+```html
+<link rel="stylesheet" href="css/style.css">
+```
+
+Esse comando importa o CSS que está dentro da pasta `css`.
+
+```html
+<script src="js/script.js"></script>
+```
+
+Esse comando importa o JavaScript que está dentro da pasta `js`.
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
+Esse comando ajuda a página a funcionar corretamente em celulares.
+
+```html
+<meta name="description" content="Página prática para estudar ferramentas Google no desenvolvimento Front-end.">
+```
+
+Esse comando contribui para SEO, pois descreve o conteúdo da página.
+
 ---
 
-## 1.2 Arquivo `style.css`
+## 6. Arquivo `css/style.css`
+
+Crie a pasta `css` e dentro dela o arquivo `style.css`.
 
 ```css
-/* Remove espaçamentos padrão e melhora o cálculo de tamanho dos elementos */
+/* =====================================================
+   VARIÁVEIS GLOBAIS
+   As variáveis ficam no início para facilitar manutenção.
+===================================================== */
+:root {
+    /* Cores principais */
+    --cor-primaria: #1a73e8;
+    --cor-primaria-escura: #0b57d0;
+    --cor-secundaria: #34a853;
+
+    /* Cores neutras */
+    --cor-fundo: #f8fafd;
+    --cor-superficie: #ffffff;
+    --cor-texto: #202124;
+    --cor-texto-suave: #5f6368;
+    --cor-borda: #dadce0;
+
+    /* Cores de apoio */
+    --cor-sucesso: #188038;
+    --cor-alerta: #fbbc04;
+    --cor-erro: #d93025;
+
+    /* Tipografia */
+    --fonte-principal: "Roboto", Arial, sans-serif;
+    --fonte-titulo: "Poppins", Arial, sans-serif;
+
+    /* Tamanhos de fonte */
+    --fonte-pequena: 0.875rem;
+    --fonte-normal: 1rem;
+    --fonte-media: 1.25rem;
+    --fonte-grande: 2rem;
+    --fonte-extra: 2.6rem;
+
+    /* Espaçamentos */
+    --espaco-1: 0.5rem;
+    --espaco-2: 1rem;
+    --espaco-3: 1.5rem;
+    --espaco-4: 2rem;
+    --espaco-5: 3rem;
+
+    /* Bordas e sombras */
+    --raio-borda: 16px;
+    --sombra-card: 0 8px 24px rgba(60, 64, 67, 0.15);
+
+    /* Transições */
+    --transicao-padrao: 0.3s ease;
+}
+
+/* =====================================================
+   RESET BÁSICO
+===================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Define fonte padrão e cor de fundo da página */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
-    color: #222;
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
     line-height: 1.6;
 }
 
-/* Área principal de destaque */
+/* =====================================================
+   ELEMENTOS GERAIS
+===================================================== */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+.container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
 .cabecalho {
-    background-color: #1a73e8;
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-escura));
     color: white;
-    text-align: center;
-    padding: 60px 20px;
+    padding: var(--espaco-4) 0;
+}
+
+.cabecalho-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--espaco-2);
 }
 
 .cabecalho h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-family: var(--fonte-titulo);
+    font-size: var(--fonte-extra);
+    margin-bottom: var(--espaco-1);
 }
 
 .cabecalho p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.9);
 }
 
-/* Botões da página */
-button {
-    background-color: #0f9d58;
+.icone-topo {
+    font-size: 4rem;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+.hero {
+    background-color: var(--cor-superficie);
+    margin-top: var(--espaco-4);
+    padding: var(--espaco-4);
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-card);
+}
+
+.hero h2 {
+    font-family: var(--fonte-titulo);
+    font-size: var(--fonte-grande);
+    margin-bottom: var(--espaco-2);
+}
+
+.hero p {
+    color: var(--cor-texto-suave);
+    margin-bottom: var(--espaco-3);
+}
+
+/* =====================================================
+   BOTÕES
+===================================================== */
+.botao {
+    background-color: var(--cor-primaria);
     color: white;
     border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
+    padding: 0.9rem 1.4rem;
+    border-radius: 999px;
     cursor: pointer;
-    font-size: 1rem;
+    font-weight: 700;
+    transition: var(--transicao-padrao);
 }
 
-/* Efeito visual ao passar o mouse */
-button:hover {
-    background-color: #0b8043;
+.botao:hover {
+    background-color: var(--cor-primaria-escura);
+    transform: translateY(-2px);
 }
 
-/* Organização dos cards usando Flexbox */
+.botao-secundario {
+    background-color: var(--cor-secundaria);
+    margin-top: var(--espaco-2);
+}
+
+.botao-secundario:hover {
+    background-color: var(--cor-sucesso);
+}
+
+/* =====================================================
+   CARDS
+===================================================== */
 .cards {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espaco-3);
+    margin: var(--espaco-4) 0;
 }
 
 .card {
-    background-color: white;
-    padding: 25px;
-    width: 250px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: var(--cor-superficie);
+    padding: var(--espaco-3);
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-card);
+    transition: var(--transicao-padrao);
 }
 
-.card h2 {
-    color: #1a73e8;
-    margin-bottom: 10px;
+.card:hover {
+    transform: translateY(-5px);
 }
 
-.formulario {
-    background-color: white;
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.card .material-symbols-outlined {
+    color: var(--cor-primaria);
+    font-size: 2.5rem;
+    margin-bottom: var(--espaco-1);
 }
 
-.formulario h2 {
-    margin-bottom: 15px;
+.card h3 {
+    font-family: var(--fonte-titulo);
+    margin-bottom: var(--espaco-1);
+}
+
+.card p {
+    color: var(--cor-texto-suave);
+}
+
+/* =====================================================
+   FORMULÁRIO
+===================================================== */
+.formulario-area {
+    background-color: var(--cor-superficie);
+    padding: var(--espaco-4);
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-card);
+    margin-bottom: var(--espaco-4);
+}
+
+.formulario-area h2 {
+    font-family: var(--fonte-titulo);
+    margin-bottom: var(--espaco-1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--espaco-2);
+}
+
+label {
+    font-weight: 700;
+    margin-top: var(--espaco-2);
+    margin-bottom: 0.25rem;
 }
 
 input {
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0 16px 0;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    padding: 0.9rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    font-size: var(--fonte-normal);
 }
 
-footer {
+input:focus {
+    outline: 3px solid rgba(26, 115, 232, 0.25);
+    border-color: var(--cor-primaria);
+}
+
+.resultado {
+    margin-top: var(--espaco-2);
+    font-weight: 700;
+    color: var(--cor-sucesso);
+}
+
+/* =====================================================
+   RODAPÉ
+===================================================== */
+.rodape {
     text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-    background-color: #222;
+    padding: var(--espaco-3);
+    background-color: var(--cor-texto);
     color: white;
 }
 
-/* Responsividade para telas menores */
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
 @media (max-width: 768px) {
-    .cards {
+    .cabecalho-conteudo {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
     }
 
-    .card {
-        width: 90%;
+    .cabecalho h1 {
+        font-size: var(--fonte-grande);
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero,
+    .formulario-area {
+        padding: var(--espaco-3);
     }
 }
 ```
 
----
+### Explicação do CSS
 
-## 1.3 Arquivo `script.js`
+As variáveis foram colocadas no início com `:root`.
 
-```javascript
-// Captura o botão pelo ID definido no HTML
-const btnMensagem = document.getElementById("btnMensagem");
+Exemplo:
 
-// Captura o botão de cadastro
-const btnCadastrar = document.getElementById("btnCadastrar");
+```css
+:root {
+    --cor-primaria: #1a73e8;
+    --fonte-principal: "Roboto", Arial, sans-serif;
+    --espaco-2: 1rem;
+}
+```
 
-// Captura o campo de e-mail
-const inputEmail = document.getElementById("email");
+Depois, em vez de repetir valores várias vezes, usamos:
 
-// Captura o parágrafo onde a mensagem será exibida
-const resultado = document.getElementById("resultado");
+```css
+background-color: var(--cor-primaria);
+font-family: var(--fonte-principal);
+padding: var(--espaco-2);
+```
 
-// Adiciona um evento de clique ao primeiro botão
-btnMensagem.addEventListener("click", function () {
-    alert("Bem-vindo à aula de ferramentas Google para Front-end!");
-});
+Isso facilita muito a manutenção.
 
-// Adiciona um evento de clique ao botão de cadastro
-btnCadastrar.addEventListener("click", function () {
-    // Guarda o valor digitado pelo usuário
-    const email = inputEmail.value;
+Se a empresa quiser trocar a cor principal do sistema, basta alterar uma linha:
 
-    // Verifica se o campo está vazio
-    if (email === "") {
-        resultado.textContent = "Por favor, informe seu e-mail.";
-        resultado.style.color = "red";
-    } else {
-        resultado.textContent = "Cadastro realizado com sucesso!";
-        resultado.style.color = "green";
-    }
-});
+```css
+--cor-primaria: #1a73e8;
 ```
 
 ---
 
-# Parte 2 — Google Chrome
+## 7. Arquivo `js/script.js`
 
-## O que é
+Crie a pasta `js` e dentro dela o arquivo `script.js`.
 
-O Google Chrome é um navegador muito utilizado no desenvolvimento Front-end porque permite testar páginas, simular dispositivos e acessar ferramentas de inspeção.
+```javascript
+// =====================================================
+// SELEÇÃO DE ELEMENTOS DO HTML
+// =====================================================
 
-## Como é utilizado no mercado
+// Busca o botão pelo id btnMensagem
+const btnMensagem = document.getElementById("btnMensagem");
 
-Desenvolvedores usam o Chrome para:
+// Busca o formulário pelo id formContato
+const formContato = document.getElementById("formContato");
 
-- testar páginas web;
-- verificar responsividade;
-- depurar JavaScript;
-- analisar performance;
-- testar APIs;
-- simular dispositivos móveis;
-- validar acessibilidade e SEO.
+// Busca o parágrafo onde será exibido o resultado do formulário
+const resultadoFormulario = document.getElementById("resultadoFormulario");
 
-## Passo a passo
+// =====================================================
+// EVENTO DE CLIQUE NO BOTÃO
+// =====================================================
 
-1. Abra a pasta do projeto no Visual Studio Code.
-2. Clique com o botão direito no arquivo `index.html`.
-3. Escolha `Open with Live Server`, caso tenha a extensão instalada.
-4. A página abrirá no navegador.
-5. Verifique se o endereço ficou parecido com:
+btnMensagem.addEventListener("click", function () {
+    // Exibe uma mensagem no navegador
+    alert("Você clicou no botão! Agora abra o Console do DevTools.");
+
+    // Exibe uma mensagem no Console do navegador
+    console.log("Botão testado com sucesso!");
+
+    // Exibe uma tabela no Console
+    console.table([
+        { ferramenta: "Chrome DevTools", uso: "Inspecionar páginas" },
+        { ferramenta: "Lighthouse", uso: "Analisar qualidade da página" },
+        { ferramenta: "PageSpeed Insights", uso: "Avaliar páginas publicadas" }
+    ]);
+});
+
+// =====================================================
+// EVENTO DE ENVIO DO FORMULÁRIO
+// =====================================================
+
+formContato.addEventListener("submit", function (evento) {
+    // Impede que a página seja recarregada ao enviar o formulário
+    evento.preventDefault();
+
+    // Captura os valores digitados nos campos
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+
+    // Verifica se algum campo está vazio
+    if (nome === "" || email === "") {
+        resultadoFormulario.textContent = "Preencha todos os campos.";
+        resultadoFormulario.style.color = "#d93025";
+
+        console.warn("Tentativa de envio com campos vazios.");
+        return;
+    }
+
+    // Exibe uma mensagem na página
+    resultadoFormulario.textContent = `Obrigado, ${nome}! Dados enviados com sucesso.`;
+    resultadoFormulario.style.color = "#188038";
+
+    // Exibe os dados no Console
+    console.log("Dados do formulário:");
+    console.log("Nome:", nome);
+    console.log("E-mail:", email);
+});
+```
+
+### Explicação do JavaScript
+
+```javascript
+const btnMensagem = document.getElementById("btnMensagem");
+```
+
+Busca no HTML o elemento que possui o id `btnMensagem`.
+
+```javascript
+btnMensagem.addEventListener("click", function () {
+```
+
+Cria um evento. Quando o usuário clicar no botão, uma função será executada.
+
+```javascript
+console.log("Botão testado com sucesso!");
+```
+
+Envia uma mensagem para o Console do navegador.
+
+```javascript
+evento.preventDefault();
+```
+
+Impede que o formulário recarregue a página automaticamente.
+
+---
+
+# PARTE 2 – Ferramentas Google para Front-end
+
+## 8. Google Chrome
+
+O Google Chrome é o navegador mais usado por desenvolvedores Front-end para testar páginas web.
+
+No mercado, ele é utilizado para:
+
+- abrir projetos locais;
+- testar responsividade;
+- verificar compatibilidade;
+- analisar erros;
+- executar auditorias com Lighthouse;
+- acessar DevTools.
+
+### Passo a passo
+
+1. Abra o projeto no navegador.
+2. Se estiver usando Visual Studio Code, instale a extensão **Live Server**.
+3. Clique com o botão direito no `index.html`.
+4. Escolha **Open with Live Server**.
+5. O navegador abrirá um endereço parecido com:
 
 ```text
 http://127.0.0.1:5500/index.html
 ```
 
-## Atividade rápida
-
-Peça aos alunos para abrirem a página no Chrome e responderem:
-
-- A página carregou corretamente?
-- O botão exibe alerta?
-- O formulário mostra mensagem?
-- O layout se adapta quando reduzimos a tela?
-
 ---
 
-# Parte 3 — Chrome DevTools
+## 9. Chrome DevTools
 
-## O que é
+O Chrome DevTools é o conjunto de ferramentas de desenvolvimento do Chrome.
 
-O Chrome DevTools é um conjunto de ferramentas de desenvolvimento integrado ao Chrome. Ele permite editar páginas em tempo real, diagnosticar problemas e entender como HTML, CSS e JavaScript estão funcionando.
+### Como abrir
 
-## Como abrir
-
-### Opção 1
-
-Clique com o botão direito na página e selecione:
-
-```text
-Inspecionar
-```
-
-### Opção 2
-
-Use o atalho:
+No Windows:
 
 ```text
 F12
 ```
 
-### Opção 3
-
-Use:
+ou
 
 ```text
 Ctrl + Shift + I
 ```
 
----
-
-## 3.1 Aba Elements
-
-### Para que serve
-
-A aba Elements permite visualizar e editar o HTML e o CSS da página em tempo real.
-
-### Quando usar
-
-- quando o layout está quebrado;
-- quando uma cor não aparece;
-- quando um elemento está fora do lugar;
-- quando é necessário testar rapidamente uma mudança visual.
-
-### Passo a passo
-
-1. Abra o DevTools.
-2. Clique na aba `Elements`.
-3. Clique no ícone de seleção de elemento.
-4. Clique no título `TechClass Front-end`.
-5. No painel de estilos, altere a cor do texto.
-6. Observe que a alteração aparece na tela, mas não salva no arquivo.
-
-### Experimento
-
-No DevTools, altere:
-
-```css
-.cabecalho h1 {
-    font-size: 4rem;
-}
-```
-
-Explique aos alunos:
-
-- essa alteração é temporária;
-- serve para testar ideias rapidamente;
-- depois precisa ser aplicada no arquivo `style.css`.
-
----
-
-## 3.2 Aba Console
-
-### Para que serve
-
-A aba Console mostra mensagens, erros e permite executar JavaScript diretamente no navegador.
-
-### Quando usar
-
-- quando um botão não funciona;
-- quando aparece erro em JavaScript;
-- quando queremos testar comandos rapidamente;
-- quando queremos imprimir valores com `console.log()`.
-
-### Passo a passo
-
-1. Abra o DevTools.
-2. Clique na aba `Console`.
-3. Digite:
-
-```javascript
-console.log("Teste no Console");
-```
-
-4. Pressione Enter.
-
-### Código comentado para testar no Console
-
-```javascript
-// Mostra uma mensagem simples no Console
-console.log("A página está funcionando");
-
-// Mostra uma tabela no Console
-console.table([
-    { tecnologia: "HTML", funcao: "Estrutura" },
-    { tecnologia: "CSS", funcao: "Estilo" },
-    { tecnologia: "JavaScript", funcao: "Interatividade" }
-]);
-
-// Mostra um aviso
-console.warn("Atenção: verifique a responsividade da página");
-
-// Mostra uma mensagem de erro simulada
-console.error("Erro simulado para fins didáticos");
-```
-
-### Atividade prática
-
-No arquivo `script.js`, adicione:
-
-```javascript
-// Mostra no Console quando o arquivo JavaScript é carregado
-console.log("Arquivo script.js carregado com sucesso");
-```
-
-Depois:
-
-1. salve o arquivo;
-2. atualize a página;
-3. abra o Console;
-4. verifique se a mensagem apareceu.
-
----
-
-## 3.3 Simulando um erro no Console
-
-Altere temporariamente esta linha:
-
-```javascript
-const btnMensagem = document.getElementById("btnMensagem");
-```
-
-Para:
-
-```javascript
-// ID escrito errado de propósito para gerar erro
-const btnMensagem = document.getElementById("btnMensageeem");
-```
-
-Ao clicar no botão ou carregar a página, poderá aparecer erro parecido com:
+Também é possível clicar com o botão direito na página e escolher:
 
 ```text
-Cannot read properties of null
+Inspecionar
 ```
-
-### Explicação
-
-O JavaScript tentou encontrar um elemento com ID `btnMensageeem`, mas esse ID não existe no HTML.
-
-### Correção
-
-Volte para:
-
-```javascript
-const btnMensagem = document.getElementById("btnMensagem");
-```
-
-Moral da história: uma letra errada no ID e o JavaScript já começa a fazer drama digno de novela das nove.
 
 ---
 
-## 3.4 Aba Network
+## 10. Aba Elements
 
-### Para que serve
+A aba **Elements** permite visualizar e alterar temporariamente o HTML e o CSS da página.
 
-A aba Network mostra todos os arquivos carregados pela página:
+### Quando usar no mercado?
 
-- HTML;
-- CSS;
-- JavaScript;
-- imagens;
-- fontes;
-- APIs;
-- tempo de carregamento.
-
-### Quando usar
-
-- quando a página demora para carregar;
-- quando uma imagem não aparece;
-- quando um arquivo CSS não foi carregado;
-- quando uma API está lenta;
-- quando queremos verificar status HTTP.
+- Ajustar layout.
+- Testar cores.
+- Corrigir espaçamentos.
+- Verificar classes CSS.
+- Entender a estrutura HTML de uma página.
 
 ### Passo a passo
 
 1. Abra o DevTools.
-2. Clique em `Network`.
-3. Atualize a página.
+2. Clique na aba **Elements**.
+3. Clique no ícone de seleção.
+4. Clique em um elemento da página.
+5. Altere textos, classes ou estilos.
+
+### Teste prático
+
+No DevTools, selecione o título:
+
+```html
+<h1>Ferramentas Google para Front-end</h1>
+```
+
+Altere temporariamente para:
+
+```html
+<h1>Minha primeira análise Front-end</h1>
+```
+
+Importante: essa alteração não muda o arquivo original. Ela serve apenas para teste.
+
+---
+
+## 11. Aba Console
+
+A aba **Console** mostra mensagens, erros e permite executar JavaScript.
+
+### Quando usar no mercado?
+
+- Identificar erros JavaScript.
+- Testar comandos rápidos.
+- Ver valores de variáveis.
+- Depurar eventos.
+
+### Passo a passo
+
+1. Abra o DevTools.
+2. Clique em **Console**.
+3. Clique no botão **Testar JavaScript** da página.
+4. Observe as mensagens exibidas.
+
+### Comandos para testar no Console
+
+```javascript
+// Exibe uma mensagem simples
+console.log("Olá, DevTools!");
+```
+
+```javascript
+// Exibe um aviso
+console.warn("Este é um aviso para teste.");
+```
+
+```javascript
+// Exibe um erro
+console.error("Este é um erro simulado.");
+```
+
+```javascript
+// Mostra informações em formato de tabela
+console.table([
+    { nome: "Ana", area: "Front-end" },
+    { nome: "Carlos", area: "Back-end" },
+    { nome: "Marina", area: "UX" }
+]);
+```
+
+---
+
+## 12. Aba Network
+
+A aba **Network** mostra tudo que a página carrega.
+
+Exemplos:
+
+- HTML
+- CSS
+- JavaScript
+- imagens
+- fontes
+- APIs
+
+### Quando usar no mercado?
+
+- Descobrir arquivos lentos.
+- Verificar se o CSS carregou corretamente.
+- Verificar se o JavaScript foi encontrado.
+- Analisar tamanho das imagens.
+- Investigar erro 404.
+
+### Passo a passo
+
+1. Abra o DevTools.
+2. Clique em **Network**.
+3. Recarregue a página com `F5`.
 4. Observe os arquivos carregados.
-5. Clique em `style.css`.
-6. Veja status, tamanho e tempo.
+5. Procure por:
+   - `index.html`
+   - `style.css`
+   - `script.js`
+   - fontes do Google
 
-### Pontos para observar
+### Erro comum
 
-| Item | O que significa |
-|---|---|
-| Status 200 | Arquivo carregado com sucesso |
-| Status 404 | Arquivo não encontrado |
-| Size | Tamanho do arquivo |
-| Time | Tempo de carregamento |
-| Waterfall | Linha do tempo do carregamento |
-
-### Atividade prática
-
-No `index.html`, altere:
+Se o caminho estiver errado assim:
 
 ```html
 <link rel="stylesheet" href="style.css">
 ```
 
-Para:
+mas o arquivo está dentro da pasta `css`, o navegador não encontrará o arquivo.
+
+O correto é:
 
 ```html
-<!-- Nome errado propositalmente para gerar erro 404 -->
-<link rel="stylesheet" href="estilo.css">
+<link rel="stylesheet" href="css/style.css">
 ```
 
-Depois:
+O mesmo vale para o JavaScript.
 
-1. atualize a página;
-2. abra a aba Network;
-3. procure o arquivo `estilo.css`;
-4. veja o erro 404;
-5. corrija o nome para `style.css`.
+Errado:
+
+```html
+<script src="script.js"></script>
+```
+
+Correto:
+
+```html
+<script src="js/script.js"></script>
+```
 
 ---
 
-## 3.5 Aba Application
+## 13. Aba Application
 
-### Para que serve
+A aba **Application** permite analisar dados armazenados no navegador.
 
-A aba Application permite visualizar dados armazenados no navegador.
+### Ela mostra:
 
-Ela mostra:
+- Local Storage
+- Session Storage
+- Cookies
+- Cache
+- Service Workers
 
-- Local Storage;
-- Session Storage;
-- Cookies;
-- Cache;
-- Service Workers.
+### Quando usar no mercado?
 
-### Quando usar
+- Verificar dados salvos no navegador.
+- Testar login.
+- Analisar tokens.
+- Limpar cache.
+- Ver cookies.
 
-- quando um sistema salva dados no navegador;
-- quando precisamos limpar cache;
-- quando trabalhamos com login;
-- quando testamos carrinho de compras;
-- quando usamos armazenamento local.
+### Teste prático no Console
 
-### Código para testar Local Storage
-
-Adicione ao `script.js`:
+Digite no Console:
 
 ```javascript
-// Salva uma informação no navegador
-localStorage.setItem("curso", "Front-end com ferramentas Google");
-
-// Recupera a informação salva
-const cursoSalvo = localStorage.getItem("curso");
-
-// Mostra o valor recuperado no Console
-console.log("Curso salvo no navegador:", cursoSalvo);
+// Salva uma informação no Local Storage
+localStorage.setItem("curso", "Front-end");
 ```
 
-### Passo a passo para visualizar
+Depois abra:
 
-1. Salve o arquivo.
-2. Atualize a página.
-3. Abra o DevTools.
-4. Clique na aba `Application`.
-5. Vá em `Local Storage`.
-6. Clique no endereço da página.
-7. Veja a chave `curso`.
+```text
+Application > Local Storage
+```
+
+Você verá a chave `curso` com o valor `Front-end`.
+
+Para remover:
+
+```javascript
+// Remove o item salvo
+localStorage.removeItem("curso");
+```
 
 ---
 
-## 3.6 Aba Sources
+## 14. Lighthouse
 
-### Para que serve
+O Lighthouse analisa a qualidade da página.
 
-A aba Sources permite visualizar arquivos carregados e depurar JavaScript com breakpoints.
+Ele avalia:
 
-### Quando usar
+- Performance
+- Accessibility
+- Best Practices
+- SEO
 
-- quando queremos pausar o código;
-- quando precisamos entender uma função;
-- quando um valor está errado;
-- quando o Console não é suficiente.
+### Quando usar no mercado?
+
+- Antes de publicar um site.
+- Depois de alterar layout.
+- Durante otimização de performance.
+- Para gerar relatório técnico.
 
 ### Passo a passo
 
-1. Abra DevTools.
-2. Clique em `Sources`.
-3. Abra o arquivo `script.js`.
-4. Clique no número da linha dentro do evento do botão.
-5. Clique no botão da página.
-6. O código será pausado naquela linha.
-
-### Conceitos
-
-| Recurso | Função |
-|---|---|
-| Breakpoint | Pausa o código em uma linha |
-| Step Over | Avança para a próxima linha |
-| Step Into | Entra dentro de uma função |
-| Resume | Continua a execução |
-| Watch | Observa valores de variáveis |
-
----
-
-# Parte 4 — Lighthouse
-
-## O que é
-
-O Lighthouse é uma ferramenta automatizada de auditoria que ajuda a melhorar a qualidade de páginas web. Ele avalia performance, acessibilidade, SEO e boas práticas.
-
-## Como é usado no mercado
-
-Empresas usam Lighthouse para:
-
-- validar qualidade antes de publicar;
-- encontrar gargalos de performance;
-- melhorar acessibilidade;
-- otimizar SEO técnico;
-- comparar evolução antes/depois de melhorias.
-
-## Passo a passo no Chrome
-
-1. Abra a página no Chrome.
+1. Abra o Chrome.
 2. Abra o DevTools.
-3. Clique na aba `Lighthouse`.
-4. Escolha `Mobile` ou `Desktop`.
-5. Marque as categorias:
-   - Performance;
-   - Accessibility;
-   - Best Practices;
-   - SEO.
-6. Clique em `Analyze page load` ou `Generate report`.
+3. Clique na aba **Lighthouse**.
+4. Escolha **Desktop** ou **Mobile**.
+5. Marque as categorias desejadas.
+6. Clique em **Analyze page load**.
 7. Aguarde o relatório.
 
-## Como interpretar
+### O que observar?
 
-| Categoria | O que analisa |
+- Performance abaixo de 50: página ruim.
+- Performance entre 50 e 89: precisa melhorar.
+- Performance entre 90 e 100: ótimo.
+
+### Métricas importantes
+
+| Métrica | O que significa |
 |---|---|
-| Performance | Velocidade e carregamento |
-| Accessibility | Acessibilidade da interface |
-| Best Practices | Segurança e boas práticas |
-| SEO | Otimização para buscadores |
-
-## Métricas importantes
-
-| Métrica | Significado | Ideal |
-|---|---|---|
-| FCP | Primeiro conteúdo visível | Quanto menor, melhor |
-| LCP | Maior conteúdo visível | Até 2,5 s |
-| INP | Resposta à interação | Até 200 ms |
-| CLS | Saltos visuais da página | Menor que 0,1 |
-| TTFB | Tempo de resposta do servidor | Quanto menor, melhor |
-
-## Atividade prática
-
-Cada aluno deverá registrar:
-
-```text
-Performance: ____
-Accessibility: ____
-Best Practices: ____
-SEO: ____
-```
-
-Depois deverá escolher uma recomendação do Lighthouse e responder:
-
-```text
-Qual problema foi apontado?
-Por que isso prejudica a página?
-Como posso corrigir?
-```
+| FCP | Tempo até o primeiro conteúdo aparecer |
+| LCP | Tempo até o maior conteúdo aparecer |
+| INP | Tempo de resposta após interação |
+| CLS | Quanto a página pula durante o carregamento |
+| TTFB | Tempo de resposta inicial do servidor |
 
 ---
 
-# Parte 5 — PageSpeed Insights
+## 15. PageSpeed Insights
 
-## O que é
+O PageSpeed Insights analisa páginas publicadas na internet.
 
-O PageSpeed Insights analisa uma página publicada na internet e mostra dados de desempenho. Ele pode apresentar dados reais de usuários e dados de laboratório.
+### Diferença entre Lighthouse e PageSpeed
 
-## Diferença entre Lighthouse e PageSpeed Insights
+| Ferramenta | Onde usa | Melhor para |
+|---|---|---|
+| Lighthouse | No Chrome DevTools | Testar durante o desenvolvimento |
+| PageSpeed Insights | Site online | Avaliar página publicada |
 
-| Ferramenta | Melhor uso |
-|---|---|
-| Lighthouse | Testar durante o desenvolvimento, inclusive localhost |
-| PageSpeed Insights | Testar páginas publicadas na internet |
-
-## Passo a passo
+### Passo a passo
 
 1. Acesse o PageSpeed Insights.
 2. Cole a URL de um site publicado.
-3. Clique em `Analisar`.
-4. Compare os resultados de Mobile e Desktop.
-5. Observe as recomendações.
+3. Clique em **Analisar**.
+4. Verifique os resultados de mobile e desktop.
+5. Leia as oportunidades de melhoria.
 
-## Atividade sugerida
+### Quando usar no mercado?
 
-Pesquisar três sites:
-
-```text
-Site 1: página de escola
-Site 2: página de loja
-Site 3: página de notícia
-```
-
-Para cada site, registre:
-
-```text
-URL:
-Performance Mobile:
-Performance Desktop:
-Principal problema encontrado:
-Uma sugestão de melhoria:
-```
+- Para avaliar sites de clientes.
+- Para medir SEO técnico.
+- Para comparar antes e depois da otimização.
+- Para criar relatórios de performance.
 
 ---
 
-# Parte 6 — Google Fonts
+## 16. Google Fonts
 
-## O que é
+Google Fonts permite utilizar fontes online em páginas web.
 
-Google Fonts é uma biblioteca de fontes para uso em páginas web.
+### Quando usar no mercado?
 
-## Como é usado no mercado
+- Criar identidade visual.
+- Melhorar aparência do site.
+- Padronizar tipografia.
+- Usar fontes profissionais sem instalar no computador.
 
-É usado para:
-
-- melhorar identidade visual;
-- padronizar tipografia;
-- deixar interfaces mais profissionais;
-- criar páginas mais agradáveis.
-
-## Passo a passo
+### Passo a passo
 
 1. Acesse Google Fonts.
 2. Escolha uma fonte.
 3. Selecione os pesos necessários.
-4. Copie o link fornecido.
+4. Copie o link gerado.
 5. Cole no `<head>` do HTML.
 6. Use a fonte no CSS.
 
-## Exemplo no `index.html`
+### Exemplo usado nesta aula
 
-Adicione dentro da tag `<head>`:
+No HTML:
 
 ```html
-<!-- Melhora a conexão com o servidor de fontes -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<!-- Importa a fonte Roboto com pesos 400 e 700 -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 ```
 
-## Exemplo no `style.css`
+No CSS:
 
-Altere o `body`:
+```css
+:root {
+    --fonte-principal: "Roboto", Arial, sans-serif;
+    --fonte-titulo: "Poppins", Arial, sans-serif;
+}
+```
+
+Uso:
 
 ```css
 body {
-    /* Roboto será usada se carregar corretamente.
-       Caso contrário, o navegador usará Arial ou outra fonte sem serifa. */
-    font-family: 'Roboto', Arial, sans-serif;
-    background-color: #f4f6f8;
-    color: #222;
-    line-height: 1.6;
+    font-family: var(--fonte-principal);
+}
+
+h1, h2, h3 {
+    font-family: var(--fonte-titulo);
 }
 ```
 
-## Boas práticas
+### Boa prática
 
-- não usar muitas fontes na mesma página;
-- importar apenas os pesos necessários;
-- usar `display=swap`;
-- testar impacto no Lighthouse;
-- evitar exageros, porque fonte demais vira carnaval tipográfico.
+Use poucos pesos de fonte.
+
+Evite carregar muitas variações como:
+
+```text
+100, 200, 300, 400, 500, 600, 700, 800, 900
+```
+
+Quanto mais pesos, mais arquivos a página precisa carregar.
 
 ---
 
-# Parte 7 — Material Symbols
+## 17. Material Symbols
 
-## O que é
+Material Symbols é a biblioteca de ícones do Google.
 
-Material Symbols é a biblioteca atual de ícones do Google, baseada em fonte variável, com milhares de ícones e variações de estilo.
+### Quando usar no mercado?
 
-## Como é usado no mercado
+- Criar interfaces modernas.
+- Substituir imagens por ícones leves.
+- Padronizar botões, menus e cards.
 
-É usado em:
+### Passo a passo
 
-- botões;
-- menus;
-- cards;
-- sistemas administrativos;
-- aplicativos web;
-- dashboards;
-- interfaces responsivas.
-
-## Passo a passo
-
-1. Acesse Google Fonts Icons.
-2. Escolha um ícone.
-3. Copie o nome do ícone.
-4. Importe a fonte de ícones no HTML.
-5. Use a tag `<span>` no local desejado.
-
-## Exemplo no `index.html`
-
-Adicione no `<head>`:
+No HTML, importe a biblioteca:
 
 ```html
-<!-- Importa Material Symbols para usar ícones como fonte -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 ```
 
-Agora altere os cards:
+Depois use um ícone:
 
 ```html
-<section class="cards">
-    <article class="card">
-        <!-- Ícone Material Symbols -->
-        <span class="material-symbols-outlined icone">code</span>
-        <h2>HTML</h2>
-        <p>Estrutura da página.</p>
-    </article>
-
-    <article class="card">
-        <span class="material-symbols-outlined icone">palette</span>
-        <h2>CSS</h2>
-        <p>Estilo, cores, espaçamento e responsividade.</p>
-    </article>
-
-    <article class="card">
-        <span class="material-symbols-outlined icone">javascript</span>
-        <h2>JavaScript</h2>
-        <p>Interatividade e comportamento.</p>
-    </article>
-</section>
+<span class="material-symbols-outlined" aria-hidden="true">
+    speed
+</span>
 ```
 
-## Exemplo no `style.css`
+No CSS, personalize:
 
 ```css
-/* Estiliza os ícones dos cards */
-.icone {
-    font-size: 40px;
-    color: #1a73e8;
-    margin-bottom: 10px;
+.material-symbols-outlined {
+    font-size: 2rem;
+    color: var(--cor-primaria);
 }
 ```
 
-## Atividade prática
+### Atenção à acessibilidade
 
-Troque os ícones dos cards por outros encontrados na biblioteca.
+Se o ícone for apenas decorativo, use:
 
-Sugestões:
-
-```text
-school
-terminal
-devices
-rocket_launch
-query_stats
+```html
+aria-hidden="true"
 ```
+
+Se o ícone tiver significado importante, adicione um texto explicativo próximo.
 
 ---
 
-# Parte 8 — Material Design
+## 18. Material Design
 
-## O que é
+Material Design é um sistema de design criado pelo Google.
 
-Material Design é um sistema de design criado pelo Google para orientar a construção de interfaces consistentes, acessíveis e agradáveis.
+Ele orienta a criação de interfaces com:
 
-## Como é usado no mercado
+- cores;
+- espaçamento;
+- botões;
+- cards;
+- formulários;
+- ícones;
+- sombras;
+- responsividade;
+- acessibilidade.
 
-Empresas usam sistemas de design para:
+### Quando usar no mercado?
 
-- padronizar telas;
-- acelerar desenvolvimento;
-- melhorar experiência do usuário;
-- reduzir retrabalho;
-- manter identidade visual.
+- Criação de aplicativos web.
+- Sistemas administrativos.
+- Aplicações Android.
+- Interfaces com padrão visual consistente.
 
-## Conceitos principais
+### Exemplo aplicado nesta aula
 
-| Conceito | Explicação |
-|---|---|
-| Cores | Criam identidade e hierarquia |
-| Tipografia | Organiza leitura e destaque |
-| Espaçamento | Evita poluição visual |
-| Componentes | Botões, cards, menus e campos |
-| Estados | Hover, foco, ativo e desabilitado |
-| Acessibilidade | Interface utilizável por mais pessoas |
-
-## Aplicação prática no nosso CSS
-
-Vamos melhorar o botão com foco visível:
+O botão usa ideias de Material Design:
 
 ```css
-button {
-    background-color: #0f9d58;
+.botao {
+    background-color: var(--cor-primaria);
     color: white;
     border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
+    padding: 0.9rem 1.4rem;
+    border-radius: 999px;
     cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button:hover {
-    background-color: #0b8043;
-    transform: translateY(-2px);
-}
-
-/* Ajuda quem navega pelo teclado */
-button:focus {
-    outline: 3px solid #fbbc04;
-    outline-offset: 3px;
+    font-weight: 700;
+    transition: var(--transicao-padrao);
 }
 ```
 
-## Melhorando os cards
+O card também segue essa ideia:
 
 ```css
 .card {
-    background-color: white;
-    padding: 25px;
-    width: 250px;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background-color: var(--cor-superficie);
+    padding: var(--espaco-3);
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-card);
 }
 ```
 
 ---
 
-# Parte 9 — Google Search para desenvolvedores
+## 19. Google Search para Desenvolvedores
 
-## O problema
+Saber pesquisar é uma habilidade profissional.
 
-Pesquisar bem é uma habilidade profissional. Quem pesquisa melhor resolve problemas mais rápido.
-
-## Pesquisa ruim
+### Pesquisa ruim
 
 ```text
 erro javascript
 ```
 
-## Pesquisa melhor
+### Pesquisa melhor
 
 ```text
-Cannot read properties of null addEventListener JavaScript
+TypeError Cannot read properties of null addEventListener JavaScript
 ```
 
-## Operadores úteis
+### Operadores úteis
 
-### Buscar frase exata
-
-```text
-"Cannot read properties of null"
-```
-
-### Buscar em site específico
+Pesquisar em um site específico:
 
 ```text
 site:developer.mozilla.org flexbox gap
 ```
 
-### Buscar documentação do Google
+Pesquisar documentação do Google:
 
 ```text
-site:developer.chrome.com DevTools Network panel
+site:developers.google.com lighthouse performance
 ```
 
-### Excluir termo
+Pesquisar frase exata:
 
 ```text
-javascript form validation -jquery
+"Cannot read properties of null"
 ```
 
-### Buscar arquivos PDF
+Excluir termo:
 
 ```text
-CSS Grid filetype:pdf
+javascript date -jquery
 ```
 
-### Buscar conteúdo recente
+Pesquisar PDF:
 
 ```text
-CSS container queries after:2025
+css grid filetype:pdf
 ```
 
-## Roteiro de pesquisa técnica
+Pesquisar conteúdo recente:
 
-1. Copie a mensagem exata do erro.
-2. Identifique a tecnologia envolvida.
-3. Pesquise primeiro documentação oficial.
-4. Compare pelo menos duas fontes.
-5. Teste a solução em código pequeno.
-6. Aplique no projeto real.
-7. Registre a solução no caderno ou README.
+```text
+CSS container queries after:2024
+```
 
 ---
 
-# Parte 10 — Google AI Studio / Gemini
+## 20. Gemini ou Google AI Studio como apoio
 
-## O que é
+Ferramentas de IA podem ajudar o desenvolvedor, mas não devem substituir o raciocínio.
 
-Google AI Studio é uma ferramenta para testar prompts, criar protótipos com Gemini e explorar recursos de IA generativa.
-
-## Como usar no Front-end
-
-Pode ajudar em:
-
-- revisão de código;
-- explicação de erros;
-- geração de ideias de interface;
-- criação de textos para páginas;
-- análise de acessibilidade;
-- refatoração de CSS;
-- criação de casos de teste.
-
-## Forma ruim de pedir ajuda
+### Forma fraca de perguntar
 
 ```text
-Faça meu site.
+Faça um site bonito.
 ```
 
-## Forma melhor
+### Forma melhor
 
 ```text
-Analise este código HTML, CSS e JavaScript. Aponte problemas de acessibilidade, performance e organização. Explique cada sugestão para um aluno iniciante.
+Analise este CSS e explique como posso melhorar organização, responsividade e performance.
 ```
 
-## Prompt para usar em aula
+### Forma melhor ainda
 
 ```text
-Você é um desenvolvedor Front-end sênior. Analise o código abaixo e diga:
-1. O que está correto.
-2. O que pode melhorar.
-3. Se há problemas de acessibilidade.
-4. Se há problemas de performance.
-5. Como melhorar sem complicar o código.
-
-Código:
-[cole aqui o HTML/CSS/JS]
+Estou estudando Front-end. Este botão não executa o evento de clique.
+Analise o código abaixo e explique o erro de forma didática.
 ```
 
-## Atenção
+### Boa prática
 
-A IA ajuda, mas não substitui o raciocínio. O aluno deve testar, comparar e entender. Copiar sem entender é terceirizar o cérebro — e o cérebro ainda não tem botão de backup automático.
+Sempre valide a resposta da IA em fontes confiáveis, como:
+
+- MDN Web Docs
+- Google Developers
+- documentação oficial da tecnologia
+- Chrome Developers
 
 ---
 
-# Parte 11 — Desafio final da aula
+# PARTE 3 – Desafio prático
 
-## Situação-problema
+## 21. Situação-problema
 
-A empresa TechClass criou uma landing page, mas antes de entregar ao cliente precisa realizar uma auditoria Front-end.
+A empresa onde você trabalha recebeu uma página web simples.
 
-Seu grupo será responsável por analisar a página e propor melhorias.
+Sua equipe precisa analisar a página e apresentar um relatório técnico com melhorias.
 
-## Tarefas do grupo
+---
+
+## 22. Atividades do grupo
+
+Cada grupo deverá:
 
 1. Abrir o projeto no Chrome.
-2. Inspecionar HTML e CSS no DevTools.
-3. Verificar erros no Console.
-4. Analisar arquivos na aba Network.
-5. Verificar Local Storage na aba Application.
-6. Executar Lighthouse.
-7. Registrar notas de Performance, Accessibility, Best Practices e SEO.
-8. Aplicar Google Fonts.
-9. Aplicar Material Symbols.
-10. Melhorar pelo menos um componente com base em Material Design.
-11. Pesquisar uma solução técnica usando operadores do Google.
-12. Apresentar os resultados.
+2. Abrir o DevTools.
+3. Analisar o HTML pela aba Elements.
+4. Verificar o CSS pela aba Styles.
+5. Executar testes no Console.
+6. Verificar arquivos carregados na aba Network.
+7. Conferir Local Storage na aba Application.
+8. Executar o Lighthouse.
+9. Registrar as notas obtidas.
+10. Pesquisar soluções para melhorar a página.
+11. Apresentar as conclusões.
 
 ---
 
-# Parte 12 — Roteiro de pesquisa para os alunos
+## 23. Roteiro de pesquisa dos alunos
 
-Cada grupo deverá escolher uma ferramenta entre:
+Cada grupo deverá escolher uma ferramenta:
 
-- Chrome DevTools;
-- Lighthouse;
-- PageSpeed Insights;
-- Google Fonts;
-- Material Symbols;
-- Material Design;
-- Google Search avançado;
-- Google AI Studio/Gemini.
+- Chrome DevTools
+- Lighthouse
+- PageSpeed Insights
+- Google Fonts
+- Material Symbols
+- Material Design
+- Google Search para desenvolvedores
+- Gemini ou Google AI Studio
 
-## Fase 1 — Identificação
+Depois, responder:
 
-Responder:
+### Fase 1 – Identificação
 
-```text
-Qual ferramenta foi escolhida?
-Quem mantém essa ferramenta?
-Qual problema ela resolve para o desenvolvedor Front-end?
-```
+1. Qual ferramenta foi escolhida?
+2. Quem mantém essa ferramenta?
+3. Qual problema ela resolve?
 
-## Fase 2 — Pesquisa inicial
+### Fase 2 – Uso no mercado
 
-Pesquisar:
+4. Em que momento do desenvolvimento Front-end ela é utilizada?
+5. Que tipo de profissional utiliza essa ferramenta?
+6. Cite uma situação real de uso em uma empresa.
 
-```text
-Documentação oficial da ferramenta
-Exemplos de uso
-Vídeos ou tutoriais recentes
-Casos de uso no mercado
-```
+### Fase 3 – Demonstração prática
 
-## Fase 3 — Análise técnica
+7. Como acessar ou instalar a ferramenta?
+8. Faça um passo a passo de uso.
+9. Mostre um exemplo prático com a página da aula.
 
-Responder:
+### Fase 4 – Análise crítica
 
-```text
-Em qual etapa do desenvolvimento Front-end ela é usada?
-Ela ajuda em HTML, CSS, JavaScript, performance, SEO ou acessibilidade?
-Quais são os principais recursos?
-```
+10. Quais são as vantagens?
+11. Quais são as limitações?
+12. Existe alguma ferramenta concorrente?
 
-## Fase 4 — Demonstração prática
+### Fase 5 – Apresentação
 
-O grupo deve demonstrar:
-
-```text
-Como abrir ou acessar a ferramenta
-Como usar uma função principal
-Como interpretar o resultado
-Como aplicar no projeto da aula
-```
-
-## Fase 5 — Mercado de trabalho
-
-Responder:
-
-```text
-Como uma empresa usa essa ferramenta?
-Que tipo de profissional utiliza?
-Em quais situações ela economiza tempo ou evita problemas?
-```
-
-## Fase 6 — Comparação
-
-Pesquisar:
-
-```text
-Existe ferramenta concorrente?
-Quais vantagens a ferramenta Google oferece?
-Quais limitações ela possui?
-```
-
-## Fase 7 — Entrega
-
-O grupo deverá entregar:
-
-```text
-1. Nome da ferramenta
-2. Resumo do que ela faz
-3. Passo a passo de uso
-4. Exemplo prático
-5. Aplicação no mercado
-6. Vantagens
-7. Limitações
-8. Fontes pesquisadas
-9. Conclusão do grupo
-```
+13. O que o grupo aprendeu?
+14. Como essa ferramenta ajuda um desenvolvedor Front-end?
+15. Em qual projeto real vocês usariam essa ferramenta?
 
 ---
 
-# Parte 13 — Modelo de relatório dos alunos
+## 24. Modelo de relatório técnico
 
 ```markdown
-# Relatório de Pesquisa - Ferramentas Google para Front-end
+# Relatório Técnico – Análise Front-end
 
-## Grupo
+## Nome do grupo
 
-Nomes dos integrantes:
+Integrantes:
 
-## Ferramenta escolhida
+## Ferramenta analisada
 
 Nome da ferramenta:
 
-## O que é
+## Objetivo da ferramenta
 
-Explique com suas palavras.
+Explique para que serve.
 
-## Para que serve
+## Como é utilizada no mercado
 
-Explique qual problema ela resolve.
+Descreva um exemplo real de uso profissional.
 
-## Quando usar no desenvolvimento Front-end
+## Demonstração realizada
 
-Explique em qual momento ela é utilizada.
+Explique o passo a passo realizado pelo grupo.
 
-## Passo a passo de uso
+## Problemas encontrados na página
 
-1. 
-2. 
-3. 
-4. 
-5. 
+Liste os problemas identificados.
 
-## Exemplo prático
+## Melhorias sugeridas
 
-Mostre um exemplo aplicado ao projeto da aula.
+Liste as melhorias propostas.
 
-## Uso no mercado
+## Resultado do Lighthouse
 
-Explique como empresas ou desenvolvedores utilizam.
-
-## Vantagens
-
-- 
-- 
-- 
-
-## Limitações
-
-- 
-- 
-- 
-
-## Ferramentas semelhantes
-
-Liste concorrentes ou alternativas.
-
-## Fontes pesquisadas
-
-- 
-- 
-- 
+Performance:
+Accessibility:
+Best Practices:
+SEO:
 
 ## Conclusão
 
-A ferramenta é útil para desenvolvedores Front-end? Por quê?
+Explique o que o grupo aprendeu.
 ```
 
 ---
 
-# Parte 14 — Critérios de avaliação
+## 25. Critérios de avaliação
 
 | Critério | Pontuação |
 |---|---:|
+| Organização do projeto | 20 |
 | Uso correto das ferramentas | 20 |
-| Participação no grupo | 15 |
-| Análise técnica da página | 20 |
-| Aplicação prática no código | 20 |
-| Pesquisa e fontes utilizadas | 15 |
-| Clareza na apresentação | 10 |
-| **Total** | **100** |
+| Pesquisa técnica | 20 |
+| Demonstração prática | 20 |
+| Apresentação e conclusão | 20 |
+
+**Total:** 100 pontos
 
 ---
 
-# Parte 15 — Fechamento da aula
+## 26. Encerramento
 
-Um desenvolvedor Front-end não entrega apenas uma página bonita.
+Um bom desenvolvedor Front-end não apenas escreve HTML, CSS e JavaScript.
 
-Ele precisa entregar uma página:
+Ele também sabe:
 
-- funcional;
-- rápida;
-- responsiva;
-- acessível;
-- bem estruturada;
-- validada com ferramentas profissionais;
-- compreensível para outros desenvolvedores.
+- testar;
+- inspecionar;
+- pesquisar;
+- corrigir;
+- medir performance;
+- pensar em acessibilidade;
+- melhorar a experiência do usuário.
 
-As ferramentas Google ajudam a enxergar o que está acontecendo por trás da tela. A página é o palco, mas o DevTools é a coxia onde a mágica — e os bugs — aparecem.
+As ferramentas Google ajudam o profissional a transformar uma página simples em uma aplicação mais rápida, acessível e profissional.
 
----
-
-# Referências para aprofundamento
-
-- Chrome DevTools: https://developer.chrome.com/docs/devtools
-- Lighthouse: https://developer.chrome.com/docs/lighthouse/overview
-- Lighthouse no DevTools: https://developer.chrome.com/docs/devtools/lighthouse
-- PageSpeed Insights: https://pagespeed.web.dev/
-- Documentação do PageSpeed Insights: https://developers.google.com/speed/docs/insights/v5/about
-- Google Fonts API: https://developers.google.com/fonts/docs/getting_started
-- Material Symbols: https://developers.google.com/fonts/docs/material_symbols
-- Material Design 3: https://m3.material.io/
-- Google AI Studio: https://ai.google.dev/aistudio
-```
