@@ -1,0 +1,286 @@
+/*=======================================
+   VARIÁVEIS GLOBAIS
+   As variáveis ficam no início para facilitar manutenção.
+======================================= */
+:root {
+    /* Cores principais */
+    --cor-primaria: #1a73e8;
+    --cor-primaria-escura: #0b57d0;
+    --cor-secundaria: #34a853;
+
+    /* Cores neutras */
+    --cor-fundo: #f8fafd;
+    --cor-superficie: #ffffff;
+    --cor-texto: #202124;
+    --cor-texto-suave: #5f6368;
+    --cor-borda: #dadce0;
+
+    /* Cores de apoio */
+    --cor-sucesso: #188038;
+    --cor-alerta: #fbbc04;
+    --cor-erro: #d93025;
+
+    /* Tipografia */
+    --fonte-principal: "Roboto", Arial, sans-serif;
+    --fonte-titulo: "Poppins", Arial, sans-serif;
+
+    /* Tamanhos de fonte */
+    --fonte-pequena: 0.875rem;
+    --fonte-normal: 1rem;
+    --fonte-media: 1.25rem;
+    --fonte-grande: 2rem;
+    --fonte-extra: 2.6rem;
+
+    /* Espaçamentos */
+    --espaco-1: 0.5rem;
+    --espaco-2: 1rem;
+    --espaco-3: 1.5rem;
+    --espaco-4: 2rem;
+    --espaco-5: 3rem;
+
+    /* Bordas e sombras */
+    --raio-borda: 16px;
+    --sombra-card: 0 8px 24px rgba(60, 64, 67, 0.15);
+
+    /* Transições */
+    --transicao-padrao: 0.3s ease;
+}
+
+/* =====================================================
+   RESET BÁSICO
+===================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* =====================================================
+   ELEMENTOS GERAIS
+===================================================== */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+.container {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+.cabecalho {
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-primaria-escura));
+    color: white;
+    padding: var(--espaco-4) 0;
+}
+
+.cabecalho-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--espaco-2);
+}
+
+.cabecalho h1 {
+    font-family: var(--fonte-titulo);
+    font-size: var(--fonte-extra);
+    margin-bottom: var(--espaco-1);
+}
+
+.cabecalho p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.icone-topo {
+    font-size: 4rem;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+.hero {
+    background-color: var(--cor-superficie);
+    margin-top: var(--espaco-4);
+    padding: var(--espaco-4);
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-card);
+}
+
+.hero h2 {
+    font-family: var(--fonte-titulo);
+    font-size: var(--fonte-grande);
+    margin-bottom: var(--espaco-2);
+}
+
+.hero p {
+    color: var(--cor-texto-suave);
+    margin-bottom: var(--espaco-3);
+}
+
+/* =====================================================
+   BOTÕES
+===================================================== */
+.botao {
+    background-color: var(--cor-primaria);
+    color: white;
+    border: none;
+    padding: 0.9rem 1.4rem;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: var(--transicao-padrao);
+}
+
+.botao:hover {
+    background-color: var(--cor-primaria-escura);
+    transform: translateY(-2px);
+}
+
+.botao-secundario {
+    background-color: var(--cor-secundaria);
+    margin-top: var(--espaco-2);
+}
+
+.botao-secundario:hover {
+    background-color: var(--cor-sucesso);
+}
+
+.material-symbols-outlined {
+    font-size: 2rem;
+    color: var(--cor-primaria);
+}
+
+/* =====================================================
+   CARDS
+===================================================== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espaco-3);
+    margin: var(--espaco-4) 0;
+}
+
+.card {
+    background-color: var(--cor-superficie);
+    padding: var(--espaco-3);
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-card);
+    transition: var(--transicao-padrao);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card .material-symbols-outlined {
+    color: var(--cor-primaria);
+    font-size: 2.5rem;
+    margin-bottom: var(--espaco-1);
+}
+
+.card h3 {
+    font-family: var(--fonte-titulo);
+    margin-bottom: var(--espaco-1);
+}
+
+.card p {
+    color: var(--cor-texto-suave);
+}
+
+/* =====================================================
+   FORMULÁRIO
+===================================================== */
+.formulario-area {
+    background-color: var(--cor-superficie);
+    padding: var(--espaco-4);
+    border-radius: var(--raio-borda);
+    box-shadow: var(--sombra-card);
+    margin-bottom: var(--espaco-4);
+}
+
+.formulario-area h2 {
+    font-family: var(--fonte-titulo);
+    margin-bottom: var(--espaco-1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--espaco-2);
+}
+
+label {
+    font-weight: 700;
+    margin-top: var(--espaco-2);
+    margin-bottom: 0.25rem;
+}
+
+input {
+    padding: 0.9rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    font-size: var(--fonte-normal);
+}
+
+input:focus {
+    outline: 3px solid rgba(26, 115, 232, 0.25);
+    border-color: var(--cor-primaria);
+}
+
+.resultado {
+    margin-top: var(--espaco-2);
+    font-weight: 700;
+    color: var(--cor-sucesso);
+}
+
+/* =====================================================
+   RODAPÉ
+===================================================== */
+.rodape {
+    text-align: center;
+    padding: var(--espaco-3);
+    background-color: var(--cor-texto);
+    color: white;
+}
+
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+@media (max-width: 768px) {
+    .cabecalho-conteudo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cabecalho h1 {
+        font-size: var(--fonte-grande);
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero,
+    .formulario-area {
+        padding: var(--espaco-3);
+    }
+}

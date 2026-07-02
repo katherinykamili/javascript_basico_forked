@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Página prática para estudar ferramentas Google no desenvolvimento Front-end.">
+
+    <title>Ferramentas Google para Front-end</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <span class="material-symbols-outlined" aria-hidden="true">
+        speed
+    </span>
+
+    <!-- Arquivo CSS dentro da pasta css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <div class="container cabecalho-conteudo">
+            <div>
+                <h1>Ferramentas Google para Front-end</h1>
+                <p>Aprendendo a analisar, testar e melhorar páginas web.</p>
+            </div>
+
+            <span class="material-symbols-outlined icone-topo" aria-hidden="true">
+                code
+            </span>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="hero">
+            <h2>Você está no papel de um(a) Front-end Júnior</h2>
+            <p>
+                Sua missão é melhorar esta página utilizando Chrome DevTools,
+                Lighthouse, PageSpeed Insights, Google Fonts e boas práticas de pesquisa.
+            </p>
+
+            <button class="botao" id="btnMensagem">
+                Testar JavaScript
+            </button>
+        </section>
+
+        <section class="cards" aria-label="Ferramentas estudadas">
+
+            <article class="card">
+                <span class="material-symbols-outlined" aria-hidden="true">travel_explore</span>
+                <h3>Chrome DevTools</h3>
+                <p>Inspecione HTML, CSS, JavaScript, rede, armazenamento e performance.</p>
+            </article>
+
+            <article class="card">
+                <span class="material-symbols-outlined" aria-hidden="true">speed</span>
+                <h3>Lighthouse</h3>
+                <p>Analise performance, acessibilidade, SEO e boas práticas da página.</p>
+            </article>
+
+            <article class="card">
+                <span class="material-symbols-outlined" aria-hidden="true">font_download</span>
+                <h3>Google Fonts</h3>
+                <p>Utilize fontes web de forma organizada e profissional.</p>
+            </article>
+
+        </section>
+
+        <section class="formulario-area">
+            <h2>Teste de formulário</h2>
+            <p>Use esta área para analisar acessibilidade e comportamento no DevTools.</p>
+
+            <form id="formContato">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
+
+                <button type="submit" class="botao botao-secundario">
+                    Enviar
+                </button>
+            </form>
+
+            <p id="resultadoFormulario" class="resultado"></p>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <p>Projeto desenvolvido para prática de ferramentas Google no Front-end.</p>
+    </footer>
+
+    <!-- Arquivo JavaScript dentro da pasta js -->
+    <script src="script.js"></script>
+</body>
+
+</html>
